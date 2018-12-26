@@ -1,0 +1,28 @@
+favorites modal
+history modal
+download history option
+download and upload favorites option
+modal for css (inputs that sy background-color, color, border-color, etc with semicolons and copy buttons)
+	dropdown select for color mode (rgb, hsl, ...)
+options modal to change size of preview
+preview modal to display text on color, color on text, color on color etc, against black, white, and other colors
+div that displys formulas
+link to color convert library on github and this repo on github
+setting for dark theme, fullscreen
+transparency/alpha option?
+type your color or color name/detect color?
+get color name from json?
+favorites list you can name them and edit them, search by name, sort by name or date
+
+color names here for detect color: https://github.com/bahamas10/css-color-names/blob/master/css-color-names.json
+user input delete spaces to lowercase
+look for #, rgb, hsl, hsv, hsb, cmyk
+
+
+make js library for converting and test
+use angular js
+make js file for updating display with certain color
+make driver/main js file for controlling change of inputs, calling converter and display files
+redo css from default bootstrap
+	replacing <br>s with padding in css, bootstrap colors with my colors, use sass maybe
+
