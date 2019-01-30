@@ -29,13 +29,20 @@
 
 <div id="sticky-header">
 	<br>
-	<h1 id="title-header">
+	<h3 id="title-header">
 		<i class="fas fa-eye-dropper fa-2x"></i> Color Converter
-		<button id="copy-link-btn" class="btn btn-lg"><i class="fas fa-link"></i> Copy Link</button>
-		<button id="rgb-reset-btn" class="btn btn-lg"><i class="fas fa-sync-alt"></i> Reset Color</button>
+		<button id="copy-link-btn" class="btn"><i class="fas fa-link"></i> Copy Link</button>
+		<button id="reset-btn" class="btn"><i class="fas fa-sync-alt"></i> Reset Color</button>
+		<button id="random-btn" class="btn"><i class="fas fa-dice"></i> Random</button>
 		<br><br>
-		<input autofocus="true" id="color-detect-input" type="text" class="form-control input-lg" value="black" placeholder="Type your color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-	</h1>
+
+		<div class="input-group">
+			<div class="input-group-append">
+				<button id="paste-btn" class="btn btn-default"><i class="fas fa-paste"></i> Paste</button>
+			</div>
+			<input autofocus="true" id="color-detect-input" type="text" class="form-control input-lg" value="black" placeholder="Type your color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+		</div>		
+	</h3>
 	<hr>
 </div>
 
@@ -43,176 +50,168 @@
 
 	<!-- RGB Column -->
 	<div class="col-lg-6 border border-dark rounded">
+		<div class="inner-div">
 
 		<h3>RGB</h3>
-		<button id="rgb-random-btn" class="btn"><i class="fas fa-dice"></i> Random</button>
 
-		<h5>RGB:</h5>
-		<div class="input-group">
-			<div class="input-group-append">
-				<button id="rgb-paste-btn" class="btn btn-dark btn-lg"><i class="fas fa-paste"></i> Paste</button>
+		<div class="row">
+			<div class="col-md-6">
+
+				<div class="input-group">
+					<input id="rgb-input" type="text" class="form-control input-lg" value="rgb(0,0,0)" placeholder="Type your RGB color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+					<div class="input-group-append">
+						<button id="rgb-copy-btn" class="btn btn-default"><i class="fas fa-copy"></i> </button>
+					</div>
+				</div>
+
 			</div>
-			<input id="rgb-input" type="text" class="form-control input-lg" value="rgb(0,0,0)" placeholder="Type your RGB color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-			<div class="input-group-append">
-				<button id="rgb-copy-btn" class="btn btn-dark btn-lg"><i class="fas fa-copy"></i> Copy</button>
+			<div class="col-md-6">
+
+				<!-- <h5>Hex:</h5> -->
+				<div class="input-group">
+					<input id="hex-input" type="text" class="form-control input-lg" value="#000000" placeholder="Type your Hex color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+					<div class="input-group-append">
+						<button id="hex-copy-btn" class="btn btn-default"><i class="fas fa-copy"></i> </button>
+					</div>
+				</div>
+
 			</div>
 		</div>
 
-		<br>
 
-		<h5>Hex:</h5>
-		<div class="input-group">
-			<div class="input-group-append">
-				<button id="hex-paste-btn" class="btn btn-dark btn-lg"><i class="fas fa-paste"></i> Paste</button>
-			</div>
-			<input id="hex-input" type="text" class="form-control input-lg" value="#000000" placeholder="Type your Hex color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
-			<div class="input-group-append">
-				<button id="hex-copy-btn" class="btn btn-dark btn-lg"><i class="fas fa-copy"></i> Copy</button>
-			</div>
-		</div>
+
 
 		<br>
 
 		<div class="row">
-			<div class="col-md-4">
+			<div class="col-4">
 				<h5>Red:</h5>
 				<input id="rgb-red-input-range" class="form-control" type="range" value="0" min="0" max="255">
 				<input id="rgb-red-input" class="form-control" type="number" value="0" min="0" max="255">
 			</div>
-			<div class="col-md-4">
+			<div class="col-4">
 				<h5>Green:</h5>
 				<input id="rgb-green-input-range" class="form-control" type="range" value="0" min="0" max="255">
 				<input id="rgb-green-input" class="form-control" type="number" value="0" min="0" max="255">
 			</div>
-			<div class="col-md-4">
+			<div class="col-4">
 				<h5>Blue:</h5>
 				<input id="rgb-green-input-range" class="form-control" type="range" value="0" min="0" max="255">
 				<input id="rgb-green-input" class="form-control" type="number" value="0" min="0" max="255">
 			</div>
+		</div>
 		</div>
 
 	</div>
 
 	<!-- CMYK Column -->
 	<div class="col-lg-6 border border-dark rounded">
+		<div class="inner-div">
 
 		<h3>CMYK</h3>
-		<button id="cmyk-random-btn" class="btn"><i class="fas fa-dice"></i> Random</button>
 
-		<h5>CMYK:</h5>
 		<div class="input-group">
-			<div class="input-group-append">
-				<button id="cmyk-paste-btn" class="btn btn-dark btn-lg"><i class="fas fa-paste"></i> Paste</button>
-			</div>
 			<input id="cmyk-input" type="text" class="form-control input-lg" value="cmyk(0%,0%,0%,100%)" placeholder="Type your CMYK color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
 			<div class="input-group-append">
-				<button id="cmyk-copy-btn" class="btn btn-dark btn-lg"><i class="fas fa-copy"></i> Copy</button>
+				<button id="cmyk-copy-btn" class="btn btn-default"><i class="fas fa-copy"></i> </button>
 			</div>
 		</div>
 
 		<br>
 
 		<div class="row">
-			<div class="col-md-6">
+			<div class="col-6 col-lg-3">
 				<h5>Cyan:</h5>
 				<input id="cmyk-cyan-input-range" class="form-control" type="range" value="0" min="0" max="100">
 				<input id="cmyk-cyan-input" class="form-control" type="number" value="0" min="0" max="100">
 			</div>
-			<div class="col-md-6">
+			<div class="col-6 col-lg-3">
 				<h5>Magenta:</h5>
 				<input id="cmyk-magenta-input-range" class="form-control" type="range" value="0" min="0" max="100">
 				<input id="cmyk-magenta-input" class="form-control" type="number" value="0" min="0" max="100">
 			</div>
-			<div class="col-md-6">
+			<div class="col-6 col-lg-3">
 				<h5>Yellow:</h5>
 				<input id="cmyk-yellow-input-range" class="form-control" type="range" value="0" min="0" max="100">
 				<input id="cmyk-yellow-input" class="form-control" type="number" value="0" min="0" max="100">
 			</div>
-			<div class="col-md-6">
+			<div class="col-6 col-lg-3">
 				<h5>Key:</h5>
 				<input id="cmyk-key-input-range" class="form-control" type="range" value="100" min="0" max="100">
 				<input id="cmyk-key-input" class="form-control" type="number" value="100" min="0" max="100">
 			</div>
+		</div>
 		</div>
 
 	</div>
 
 	<!-- HSL Column -->
 	<div class="col-lg-6 border border-dark rounded">
-
+		<div class="inner-div">
 		<h3>HSL</h3>
-		<button id="hsl-random-btn" class="btn"><i class="fas fa-dice"></i> Random</button>
 
-		<h5>HSL:</h5>
 		<div class="input-group">
-			<div class="input-group-append">
-				<button id="hsl-paste-btn" class="btn btn-dark btn-lg"><i class="fas fa-paste"></i> Paste</button>
-			</div>
 			<input id="hsl-input" type="text" class="form-control input-lg" value="hsl(0,0%,0%)" placeholder="Type your HSL color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
 			<div class="input-group-append">
-				<button id="hsl-copy-btn" class="btn btn-dark btn-lg"><i class="fas fa-copy"></i> Copy</button>
+				<button id="hsl-copy-btn" class="btn btn-default"><i class="fas fa-copy"></i> </button>
 			</div>
 		</div>
 
 		<br>
 
 		<div class="row">
-			<div class="col-md-4">
+			<div class="col-4">
 				<h5>Hue:</h5>
 				<input id="hsl-hue-input-range" class="form-control" type="range" value="0" min="0" max="360">
 				<input id="hsl-hue-input" class="form-control" type="number" value="0" min="0" max="360">
 			</div>
-			<div class="col-md-4">
+			<div class="col-4">
 				<h5>Saturation:</h5>
 				<input id="hsl-saturation-input-range" class="form-control" type="range" value="0" min="0" max="100">
 				<input id="hsl-saturation-input" class="form-control" type="number" value="0" min="0" max="100">
 			</div>
-			<div class="col-md-4">
+			<div class="col-4">
 				<h5>Lightness:</h5>
 				<input id="hsl-lightness-input-range" class="form-control" type="range" value="0" min="0" max="100">
 				<input id="hsl-lightness-input" class="form-control" type="number" value="0" min="0" max="100">
 			</div>
+		</div>
 		</div>
 
 	</div>
 
 	<!-- HSV Column -->
 	<div class="col-lg-6 border border-dark rounded">
-
+		<div class="inner-div">
 		<h3>HSV/HSB</h3>
-		<button id="hsv-random-btn" class="btn"><i class="fas fa-dice"></i> Random</button>
 
-		<h5>HSV/HSB:</h5>
 		<div class="input-group">
-			<div class="input-group-append">
-				<button id="hsv-paste-btn" class="btn btn-dark btn-lg"><i class="fas fa-paste"></i> Paste</button>
-			</div>
 			<input id="hsv-input" type="text" class="form-control input-lg" value="hsv(0,0%,0%)" placeholder="Type your HSV color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
 			<div class="input-group-append">
-				<button id="hsv-copy-btn" class="btn btn-dark btn-lg"><i class="fas fa-copy"></i> Copy</button>
+				<button id="hsv-copy-btn" class="btn btn-default"><i class="fas fa-copy"></i> </button>
 			</div>
 		</div>
 
 		<br>
 
 		<div class="row">
-			<div class="col-md-4">
+			<div class="col-4">
 				<h5>Hue:</h5>
 				<input id="hsv-hue-input-range" class="form-control" type="range" value="0" min="0" max="360">
 				<input id="hsv-hue-input" class="form-control" type="number" value="0" min="0" max="360">
 			</div>
-			<div class="col-md-4">
+			<div class="col-4">
 				<h5>Saturation:</h5>
 				<input id="hsv-saturation-input-range" class="form-control" type="range" value="0" min="0" max="100">
 				<input id="hsv-saturation-input" class="form-control" type="number" value="0" min="0" max="100">
 			</div>
-			<div class="col-md-4">
-				<h5>Value/Brightness:</h5>
+			<div class="col-4">
+				<h5>Value<span id="brightnessSpan">/Brightness</span>:</h5>
 				<input id="hsv-value-input-range" class="form-control" type="range" value="0" min="0" max="100">
 				<input id="hsv-value-input" class="form-control" type="number" value="0" min="0" max="100">
 			</div>
 		</div>
-
+		</div>
 	</div>
 
 </div>
