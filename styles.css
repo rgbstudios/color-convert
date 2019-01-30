@@ -13,6 +13,13 @@ img, button, br {
 
 /*--------------------------------*/
 
+body, button {
+	color: #333;
+}
+hr, input, .inner-div, button {
+	border-color: #ccc !important;
+}
+
 input {
 	text-align: center;
 }
@@ -23,13 +30,22 @@ input {
 .inner-div {
 	padding: 20px !important;
 	margin: 10px !important;
-	border: 1px solid #000;
-	border-radius: 10px;
+	border: 1px solid;
+	border-radius: 5px;
 }
+
+button {
+	border: 1px solid;
+	background-color: #e6e6e6;
+}
+
+
 
 #title-header {
 	color: #000; /* color will change when selected */
 }
+
+
 
 .slick-arrow:before { 
 	color: #000 !important;
