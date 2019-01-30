@@ -19,6 +19,11 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js"></script>
 
+<!-- slick -->
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"/>
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"/>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+
 <link rel="stylesheet" href="styles.css">
 <script src="scripts.js"></script>
 
@@ -30,11 +35,18 @@
 <div id="sticky-header">
 	<br>
 	<h3 id="title-header">
-		<i class="fas fa-eye-dropper fa-2x"></i> Color Converter
-		<button id="copy-link-btn" class="btn"><i class="fas fa-link"></i> Copy Link</button>
-		<button id="reset-btn" class="btn"><i class="fas fa-sync-alt"></i> Reset Color</button>
-		<button id="random-btn" class="btn"><i class="fas fa-dice"></i> Random</button>
-		<br><br>
+		<div class="row">
+			<div class="col-md-6">
+				<i class="fas fa-eye-dropper fa-2x"></i> Color Converter
+			</div>
+			<div class="col-md-6">
+				<br>
+				<button id="copy-link-btn" class="btn"><i class="fas fa-link"></i> Copy Link</button>
+				<button id="reset-btn" class="btn"><i class="fas fa-sync-alt"></i> Reset</button>
+				<button id="random-btn" class="btn"><i class="fas fa-dice"></i> Random</button>
+			</div>
+		</div>
+		<br>
 
 		<div class="input-group">
 			<div class="input-group-append">
@@ -46,8 +58,7 @@
 	<hr>
 </div>
 
-<div class="row">
-
+<div id="color-sections" class="row">
 	<!-- RGB Column -->
 	<div class="col-lg-6 border border-dark rounded">
 		<div class="inner-div">
@@ -77,9 +88,6 @@
 
 			</div>
 		</div>
-
-
-
 
 		<br>
 
@@ -206,7 +214,7 @@
 				<input id="hsv-saturation-input" class="form-control" type="number" value="0" min="0" max="100">
 			</div>
 			<div class="col-4">
-				<h5>Value<span id="brightnessSpan">/Brightness</span>:</h5>
+				<h5>Value:</h5>
 				<input id="hsv-value-input-range" class="form-control" type="range" value="0" min="0" max="100">
 				<input id="hsv-value-input" class="form-control" type="number" value="0" min="0" max="100">
 			</div>
