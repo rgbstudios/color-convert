@@ -106,6 +106,26 @@ function setRGB(rgb) {
 	$('#rgb-blue-input-range').val(b);
 }
 
+function setCMYK(cmyk) {
+	let c = cmyk.c == undefined ? clamp(parseInt($('#cmyk-cyan-input').val() ),0,255) : cmyk.c;
+	let m = cmyk.m == undefined ? clamp(parseInt($('#cmyk-magenta-input').val() ),0,255) : cmyk.m;
+	let y = cmyk.y == undefined ? clamp(parseInt($('#cmyk-yellow-input').val() ),0,255) : cmyk.y;
+	let k = cmyk.k == undefined ? clamp(parseInt($('#cmyk-key-input').val() ),0,255) : cmyk.k;
+
+	console.log(c,m,y,k);
+
+	$('#cmyk-input').val('rgb(' + c + '%,' + m + '%,' + y + '%,' + k + '%)');
+
+	$('#cmyk-cyan-input').val(c);
+	$('#cmyk-cyan-input-range').val(c);
+	$('#cmyk-magenta-input').val(m);
+	$('#cmyk-magenta-input-range').val(m);
+	$('#cmyk-yellow-input').val(y);
+	$('#cmyk-yellow-input-range').val(y);
+	$('#cmyk-key-input').val(k);
+	$('#cmyk-key-input-range').val(k);
+}
+
 function RGBtoHex(r, g, b) {
 	r = r.toString(16);
 	g = g.toString(16);
