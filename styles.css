@@ -1,5 +1,10 @@
 /*todo: color the sliders with their repective colors?*/
-
+* {
+	font-family: 'Cabin', sans-serif;
+}
+h3 {
+	font-weight: bold;
+}
 img, button, br {
 	-webkit-user-select: none; /* Safari */        
 	-moz-user-select: none; /* Firefox */
