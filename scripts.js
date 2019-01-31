@@ -44,15 +44,10 @@ $(function() {
 
 });
 
-
 function clamp(num, min, max) {
 	if(isNaN(num) )
 		return 0;
 	return num <= min ? min : num >= max ? max : num;
-}
-
-function getRGBFromText(str) {
-
 }
 
 function getValsFromText(str, numVals, min, max) {
