@@ -15,28 +15,21 @@ $(function() {
 		document.execCommand('copy');
 	});
 
-	$('.rgb-input').change(function() {
-		updateRGB($(this) );
+	$('.red').change(function() {
+		setRGB( { r : clamp($(this).val(),0,255) } );
 	});
+	$('.green').change(function() {
+		setRGB( { g : clamp($(this).val(),0,255) } );
+	});
+	$('.blue').change(function() {
+		setRGB( { b : clamp($(this).val(),0,255) } );
+	});
+	// $('#rgb-input').change(function() {
+
+	// });
 
 });
 
-function updateRGB(changedElm) {
-
-	if(changedElm.attr('type') != 'text') {
-		let val = clamp(changedElm.val(),0,255);
-		if(changedElm.hasClass('red') ) {
-			setRGB({r:val} );
-		}
-		else if(changedElm.hasClass('green') ) {
-			setRGB({g:val});
-		}
-		else { //blue
-			setRGB({b:val});
-		}
-	}
-	console.log(changedElm.attr('id') ); //todo: rgb and hex inputs
-}
 
 function clamp(num, min, max) {
 	if(isNaN(num) )
