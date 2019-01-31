@@ -28,9 +28,13 @@ $(function() {
 		setRGB( { b : val } );
 	});
 	$('#rgb-input').change(function() {
-		let rgb = getRGBFromText($(this).val() );
-		if(rgb)
-			setRGB(rgb);
+		let vals = getValsFromText($(this).val(),3,0,255);
+		if(vals)
+			setRGB({
+				r: vals[0],
+				g: vals[1],
+				b: vals[2]
+			});
 	});
 	$('#hex-input').change(function() {
 		let rgb = getRGBFromHex($(this).val() );
@@ -48,15 +52,7 @@ function clamp(num, min, max) {
 }
 
 function getRGBFromText(str) {
-	let vals = getValsFromText(str, 3, 0,255);
-	if(vals)
-		return {
-			r: vals[0],
-			g: vals[1],
-			b: vals[2]
-		};
-	else
-		return false
+
 }
 
 function getValsFromText(str, numVals, min, max) {
