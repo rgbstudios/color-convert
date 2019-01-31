@@ -24,6 +24,9 @@
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"/>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/tinyColorPicker/1.1.1/jqColorPicker.min.js"></script>
+<script src="https://www.w3schools.com/lib/w3color.js"></script>
+
 <link rel="stylesheet" href="styles.css">
 <script src="scripts.js"></script>
 <script src="color.js"></script>
@@ -43,13 +46,14 @@
 		</div>
 		<div class="col-lg-4 col-md-6">
 			<br>
-			<button id="copy-link-btn" class="btn"><i class="fas fa-link"></i> Link</button>
+			<button id="link-btn" class="btn"><i class="fas fa-link"></i> Link</button>
 			<button id="reset-btn" class="btn"><i class="fas fa-sync-alt"></i> Reset</button>
 			<button id="random-btn" class="btn"><i class="fas fa-dice"></i> Random</button>
 		</div>
 		<div class="col-lg-4 col-md-12">
 			<br>
-			<input autofocus="true" id="color-detect-input" type="text" class="form-control input-lg" value="black" placeholder="Type your color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+			<input autofocus="true" id="color-detect-input" type="text" class="form-control input-lg" value="" placeholder="Type your color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+			<input id="color-picker" class="form-control" value="hsl(0,0,0)" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
 		</div>
 	</div>
 	<br>
@@ -65,9 +69,8 @@
 
 		<div class="row">
 			<div class="col-md-6">
-
 				<div class="input-group">
-					<input id="rgb-input" type="text" class="form-control input-lg rgb-input" value="rgb(0,0,0)" placeholder="Type your RGB color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+					<input id="rgb-input" type="text" class="form-control input-lg " value="rgb(0, 0, 0)" placeholder="Type your RGB color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
 					<div class="input-group-append">
 						<button class="btn btn-default btn-copy"><i class="fas fa-copy"></i> </button>
 					</div>
@@ -75,10 +78,9 @@
 
 			</div>
 			<div class="col-md-6">
-
 				<!-- <h5>Hex:</h5> -->
 				<div class="input-group">
-					<input id="hex-input" type="text" class="form-control input-lg rgb-input" value="#000000" placeholder="Type your Hex color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+					<input id="hex-input" type="text" class="form-control input-lg " value="#000000" placeholder="Type your Hex color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
 					<div class="input-group-append">
 						<button class="btn btn-default btn-copy"><i class="fas fa-copy"></i> </button>
 					</div>
@@ -92,18 +94,18 @@
 		<div class="row">
 			<div class="col-4">
 				<h5>Red:</h5>
-				<input id="rgb-red-input-range" class="form-control rgb-input red" type="range" value="0" min="0" max="255">
-				<input id="rgb-red-input" class="form-control rgb-input red" type="number" value="0" min="0" max="255">
+				<input id="rgb-red-input-range" class="form-control  red" type="range" value="0" min="0" max="255">
+				<input id="rgb-red-input" class="form-control  red" type="number" value="0" min="0" max="255">
 			</div>
 			<div class="col-4">
 				<h5>Green:</h5>
-				<input id="rgb-green-input-range" class="form-control rgb-input green" type="range" value="0" min="0" max="255">
-				<input id="rgb-green-input" class="form-control rgb-input green" type="number" value="0" min="0" max="255">
+				<input id="rgb-green-input-range" class="form-control  green" type="range" value="0" min="0" max="255">
+				<input id="rgb-green-input" class="form-control  green" type="number" value="0" min="0" max="255">
 			</div>
 			<div class="col-4">
 				<h5>Blue:</h5>
-				<input id="rgb-blue-input-range" class="form-control rgb-input blue" type="range" value="0" min="0" max="255">
-				<input id="rgb-blue-input" class="form-control rgb-input blue" type="number" value="0" min="0" max="255">
+				<input id="rgb-blue-input-range" class="form-control  blue" type="range" value="0" min="0" max="255">
+				<input id="rgb-blue-input" class="form-control  blue" type="number" value="0" min="0" max="255">
 			</div>
 		</div>
 		</div>
@@ -117,7 +119,7 @@
 		<h3>CMYK</h3>
 
 		<div class="input-group">
-			<input id="cmyk-input" type="text" class="form-control input-lg" value="cmyk(0%,0%,0%,100%)" placeholder="Type your CMYK color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+			<input id="cmyk-input" type="text" class="form-control input-lg" value="cmyk(0%, 0%, 0%, 100%)" placeholder="Type your CMYK color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
 			<div class="input-group-append">
 				<button class="btn btn-default btn-copy"><i class="fas fa-copy"></i> </button>
 			</div>
@@ -128,23 +130,23 @@
 		<div class="row">
 			<div class="col-6 col-lg-3">
 				<h5>Cyan:</h5>
-				<input id="cmyk-cyan-input-range" class="form-control" type="range" value="0" min="0" max="100">
-				<input id="cmyk-cyan-input" class="form-control" type="number" value="0" min="0" max="100">
+				<input id="cmyk-cyan-input-range" class="form-control cyan" type="range" value="0" min="0" max="100">
+				<input id="cmyk-cyan-input" class="form-control cyan" type="number" value="0" min="0" max="100">
 			</div>
 			<div class="col-6 col-lg-3">
 				<h5>Magenta:</h5>
-				<input id="cmyk-magenta-input-range" class="form-control" type="range" value="0" min="0" max="100">
-				<input id="cmyk-magenta-input" class="form-control" type="number" value="0" min="0" max="100">
+				<input id="cmyk-magenta-input-range" class="form-control magenta" type="range" value="0" min="0" max="100">
+				<input id="cmyk-magenta-input" class="form-control magenta" type="number" value="0" min="0" max="100">
 			</div>
 			<div class="col-6 col-lg-3">
 				<h5>Yellow:</h5>
-				<input id="cmyk-yellow-input-range" class="form-control" type="range" value="0" min="0" max="100">
-				<input id="cmyk-yellow-input" class="form-control" type="number" value="0" min="0" max="100">
+				<input id="cmyk-yellow-input-range" class="form-control yellow" type="range" value="0" min="0" max="100">
+				<input id="cmyk-yellow-input" class="form-control yellow" type="number" value="0" min="0" max="100">
 			</div>
 			<div class="col-6 col-lg-3">
 				<h5>Key:</h5>
-				<input id="cmyk-key-input-range" class="form-control" type="range" value="100" min="0" max="100">
-				<input id="cmyk-key-input" class="form-control" type="number" value="100" min="0" max="100">
+				<input id="cmyk-key-input-range" class="form-control key" type="range" value="100" min="0" max="100">
+				<input id="cmyk-key-input" class="form-control key" type="number" value="100" min="0" max="100">
 			</div>
 		</div>
 		</div>
@@ -157,7 +159,7 @@
 		<h3>HSL</h3>
 
 		<div class="input-group">
-			<input id="hsl-input" type="text" class="form-control input-lg" value="hsl(0,0%,0%)" placeholder="Type your HSL color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+			<input id="hsl-input" type="text" class="form-control input-lg" value="hsl(0, 0%, 0%)" placeholder="Type your HSL color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
 			<div class="input-group-append">
 				<button class="btn btn-default btn-copy"><i class="fas fa-copy"></i> </button>
 			</div>
@@ -168,18 +170,18 @@
 		<div class="row">
 			<div class="col-4">
 				<h5>Hue:</h5>
-				<input id="hsl-hue-input-range" class="form-control" type="range" value="0" min="0" max="360">
-				<input id="hsl-hue-input" class="form-control" type="number" value="0" min="0" max="360">
+				<input id="hsl-hue-input-range" class="form-control hsl-hue" type="range" value="0" min="0" max="360">
+				<input id="hsl-hue-input" class="form-control hsl-hue" type="number" value="0" min="0" max="360">
 			</div>
 			<div class="col-4">
 				<h5>Saturation:</h5>
-				<input id="hsl-saturation-input-range" class="form-control" type="range" value="0" min="0" max="100">
-				<input id="hsl-saturation-input" class="form-control" type="number" value="0" min="0" max="100">
+				<input id="hsl-saturation-input-range" class="form-control hsl-saturation" type="range" value="0" min="0" max="100">
+				<input id="hsl-saturation-input" class="form-control hsl-saturation" type="number" value="0" min="0" max="100">
 			</div>
 			<div class="col-4">
 				<h5>Lightness:</h5>
-				<input id="hsl-lightness-input-range" class="form-control" type="range" value="0" min="0" max="100">
-				<input id="hsl-lightness-input" class="form-control" type="number" value="0" min="0" max="100">
+				<input id="hsl-lightness-input-range" class="form-control lightness" type="range" value="0" min="0" max="100">
+				<input id="hsl-lightness-input" class="form-control lightness" type="number" value="0" min="0" max="100">
 			</div>
 		</div>
 		</div>
@@ -192,7 +194,7 @@
 		<h3>HSV/HSB</h3>
 
 		<div class="input-group">
-			<input id="hsv-input" type="text" class="form-control input-lg" value="hsv(0,0%,0%)" placeholder="Type your HSV color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+			<input id="hsv-input" type="text" class="form-control input-lg" value="hsv(0, 0%, 0%)" placeholder="Type your HSV color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
 			<div class="input-group-append">
 				<button class="btn btn-default btn-copy"><i class="fas fa-copy"></i> </button>
 			</div>
@@ -203,18 +205,18 @@
 		<div class="row">
 			<div class="col-4">
 				<h5>Hue:</h5>
-				<input id="hsv-hue-input-range" class="form-control" type="range" value="0" min="0" max="360">
-				<input id="hsv-hue-input" class="form-control" type="number" value="0" min="0" max="360">
+				<input id="hsv-hue-input-range" class="form-control hsv-hue" type="range" value="0" min="0" max="360">
+				<input id="hsv-hue-input" class="form-control hsv-hue" type="number" value="0" min="0" max="360">
 			</div>
 			<div class="col-4">
 				<h5>Saturation:</h5>
-				<input id="hsv-saturation-input-range" class="form-control" type="range" value="0" min="0" max="100">
-				<input id="hsv-saturation-input" class="form-control" type="number" value="0" min="0" max="100">
+				<input id="hsv-saturation-input-range" class="form-control hsv-saturation" type="range" value="0" min="0" max="100">
+				<input id="hsv-saturation-input" class="form-control hsv-saturation" type="number" value="0" min="0" max="100">
 			</div>
 			<div class="col-4">
 				<h5>Value:</h5>
-				<input id="hsv-value-input-range" class="form-control" type="range" value="0" min="0" max="100">
-				<input id="hsv-value-input" class="form-control" type="number" value="0" min="0" max="100">
+				<input id="hsv-value-input-range" class="form-control value" type="range" value="0" min="0" max="100">
+				<input id="hsv-value-input" class="form-control value" type="number" value="0" min="0" max="100">
 			</div>
 		</div>
 		</div>
