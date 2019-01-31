@@ -17,18 +17,15 @@ $(function() {
 
 	$('.red').change(function() {
 		let val = clamp(parseInt($(this).val() ),0,255);
-		// if(val)
-			setRGB( { r : val } );
+		setRGB( { r : val } );
 	});
 	$('.green').change(function() {
 		let val = clamp(parseInt($(this).val() ),0,255);
-		// if(val)
-			setRGB( { g : val } );
+		setRGB( { g : val } );
 	});
 	$('.blue').change(function() {
 		let val = clamp(parseInt($(this).val() ),0,255);
-		// if(val)
-			setRGB( { b : val } );
+		setRGB( { b : val } );
 	});
 	$('#rgb-input').change(function() {
 		let rgb = getRGBFromText($(this).val() );
@@ -51,22 +48,30 @@ function clamp(num, min, max) {
 }
 
 function getRGBFromText(str) {
+	let vals = getValsFromText(str, 3, 0,255);
+	if(vals)
+		return {
+			r: vals[0],
+			g: vals[1],
+			b: vals[2]
+		};
+	else
+		return false
+}
+
+function getValsFromText(str, numVals, min, max) {
 	str = str.split(',');
-	if(str.length<3)
+	if(str.length<numVals)
 		return false;
 
 	let vals = [];
-	for(let i=0; i<3; i++) {
-		vals[i] = clamp(parseInt(str[i].replace(/\D/g,'') ),0,255);
+	for(let i=0; i<numVals; i++) {
+		vals[i] = clamp(parseInt(str[i].replace(/\D/g,'') ),min,max);
 		if(isNaN(vals[i]) )
 			return false;
 	}
 
-	return {
-		r: vals[0],
-		g: vals[1],
-		b: vals[2]
-	};
+	return vals;
 }
 
 function getRGBFromHex(str) {
