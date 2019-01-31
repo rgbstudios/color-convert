@@ -16,31 +16,86 @@ $(function() {
 	});
 
 	$('.red').change(function() {
-		setRGB( { r : clamp($(this).val(),0,255) } );
+		let val = clamp(parseInt($(this).val() ),0,255);
+		// if(val)
+			setRGB( { r : val } );
 	});
 	$('.green').change(function() {
-		setRGB( { g : clamp($(this).val(),0,255) } );
+		let val = clamp(parseInt($(this).val() ),0,255);
+		// if(val)
+			setRGB( { g : val } );
 	});
 	$('.blue').change(function() {
-		setRGB( { b : clamp($(this).val(),0,255) } );
+		let val = clamp(parseInt($(this).val() ),0,255);
+		// if(val)
+			setRGB( { b : val } );
 	});
-	// $('#rgb-input').change(function() {
-
-	// });
+	$('#rgb-input').change(function() {
+		let rgb = getRGBFromText($(this).val() );
+		if(rgb)
+			setRGB(rgb);
+	});
+	$('#hex-input').change(function() {
+		let rgb = getRGBFromHex($(this).val() );
+		if(rgb)
+			setRGB(rgb);
+	});
 
 });
 
 
 function clamp(num, min, max) {
 	if(isNaN(num) )
-		return false;
+		return 0;
 	return num <= min ? min : num >= max ? max : num;
 }
 
+function getRGBFromText(str) {
+	str = str.split(',');
+	if(str.length<3)
+		return false;
+
+	let vals = [];
+	for(let i=0; i<3; i++) {
+		vals[i] = clamp(parseInt(str[i].replace(/\D/g,'') ),0,255);
+		if(isNaN(vals[i]) )
+			return false;
+	}
+
+	return {
+		r: vals[0],
+		g: vals[1],
+		b: vals[2]
+	};
+}
+
+function getRGBFromHex(str) {
+	str = str.replace(/[^0-9,a-f,A-F]+/g,'');
+
+	let vals = [];
+	if(str.length==6) {
+		for(let i=0;i<3; i++)
+			vals[i] = clamp(parseInt(str.substr(i*2,2), 16),0,255);
+	}
+	else if(str.length==3) { //shorthand
+		for(let i=0;i<3; i++)
+			vals[i] = clamp(17*parseInt(str.substr(i,1), 16),0,255);
+	}
+	else {
+		return false;
+	}
+
+	return {
+		r: vals[0],
+		g: vals[1],
+		b: vals[2]
+	};
+}
+
 function setRGB(rgb) {
-	let r = rgb.r == undefined ? $('#rgb-red-input').val() : rgb.r;
-	let g = rgb.g == undefined ? $('#rgb-green-input').val() : rgb.g;
-	let b = rgb.b == undefined ? $('#rgb-blue-input').val() : rgb.b;
+	let r = rgb.r == undefined ? clamp(parseInt($('#rgb-red-input').val() ),0,255) : rgb.r;
+	let g = rgb.g == undefined ? clamp(parseInt($('#rgb-green-input').val() ),0,255) : rgb.g;
+	let b = rgb.b == undefined ? clamp(parseInt($('#rgb-blue-input').val() ),0,255) : rgb.b;
 
 	console.log(r,g,b);
 
