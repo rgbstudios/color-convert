@@ -15,7 +15,63 @@ $(function() {
 		document.execCommand('copy');
 	});
 
+	$('.rgb-input').change(function() {
+		updateRGB($(this) );
+	});
+
 });
+
+function updateRGB(changedElm) {
+
+	if(changedElm.attr('type') != 'text') {
+		let val = clamp(changedElm.val(),0,255);
+		if(changedElm.hasClass('red') ) {
+			setRGB({r:val} );
+		}
+		else if(changedElm.hasClass('green') ) {
+			setRGB({g:val});
+		}
+		else { //blue
+			setRGB({b:val});
+		}
+	}
+	console.log(changedElm.attr('id') ); //todo: rgb and hex inputs
+}
+
+function clamp(num, min, max) {
+	if(isNaN(num) )
+		return false;
+	return num <= min ? min : num >= max ? max : num;
+}
+
+function setRGB(rgb) {
+	let r = rgb.r == undefined ? $('#rgb-red-input').val() : rgb.r;
+	let g = rgb.g == undefined ? $('#rgb-green-input').val() : rgb.g;
+	let b = rgb.b == undefined ? $('#rgb-blue-input').val() : rgb.b;
+
+	console.log(r,g,b);
+
+	$('#rgb-input').val('rgb(' + r + ',' + g + ',' + b + ')');
+	$('#hex-input').val(RGBtoHex(parseInt(r), parseInt(g), parseInt(b) ) );
+
+	$('#rgb-red-input').val(r);
+	$('#rgb-red-input-range').val(r);
+	$('#rgb-green-input').val(g);
+	$('#rgb-green-input-range').val(g);
+	$('#rgb-blue-input').val(b);
+	$('#rgb-blue-input-range').val(b);
+}
+
+function RGBtoHex(r, g, b) {
+	r = r.toString(16);
+	g = g.toString(16);
+	b = b.toString(16);
+	r = r.length == 1 ? '0' + r : r;
+	g = g.length == 1 ? '0' + g : g;
+	b = b.length == 1 ? '0' + b : b;
+
+	return ('#' + r + g + b).toUpperCase();
+}
 
 $(window).resize(checkSlick);
 
