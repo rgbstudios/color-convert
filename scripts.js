@@ -106,10 +106,8 @@ $(function() {
 	});
 	$('#cmyk-input').change(function() {
 		let cmyk = getValsFromText($(this).val(),'cmyk');
-		console.log(cmyk);
 		if(cmyk) {
 			setCMYK(cmyk);
-			console.log($('#cmyk-input').val() );
 			setColor($('#cmyk-input').val() );
 		}
 	});
@@ -317,12 +315,8 @@ function setHSV(hsv) {
 }
 
 function setColor(str) { //using w3 library
-	console.log(str);
-
 	let c = w3color(str);
 	if(!c.valid) return false;
-
-	console.log(c);
 
 	setRGB(c.toRgb() );
 
@@ -419,6 +413,13 @@ function checkSlick() {
 		isSlick = false;
 	}	
 }
+
+$(window).click(function(e) {
+	// fix for clicking on an input while it's open
+	if(e.target.id != '#color-picker') {
+		$('#color-picker').colorPicker('close');
+	}
+});
 
 window.onkeyup = function(e) {
 	let key = e.keyCode ? e.keyCode : e.which;
