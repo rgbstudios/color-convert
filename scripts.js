@@ -26,6 +26,7 @@ $(function() {
 	$('#reset-btn').click(function() {
 		setRGB( { r : 0, g : 0, b : 0 } );
 		setColor($('#rgb-input').val() );
+		window.history.replaceState(null, null, window.location.pathname);
 	});
 	$('#link-btn').click(function() {
 		//don't store '#' in url or it messes it up
