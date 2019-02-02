@@ -12,6 +12,7 @@ $(function() {
 		function(elm, toggled) {
 			$('#hsl-input').val(elm.val() );
 			setColor($('#hsl-input').val() );
+			console.log('callback called');
 		}
 	});
 	$('#random-btn').click(function() {
@@ -344,7 +345,7 @@ function setColor(str) { //using w3 library
 		$('.btn').css('background-color', '#fff');
 	}
 
-	$('#color-picker').val(hex );
+	$('#color-picker').val(hex);
 	$('#color-picker').css('background-color', hex);
 
 	//set url if already set
@@ -419,7 +420,7 @@ function checkSlick() {
 $(window).click(function(e) {
 	// fix for clicking on an input while it's open
 	if(e.target.id != '#color-picker')
-		$('#color-picker').colorPicker('close');
+		$('#color-picker').colorPicker('close'); //todo: this is causing problems for not rendering color-picker's val after another element was clicked
 });
 
 window.onkeyup = function(e) {

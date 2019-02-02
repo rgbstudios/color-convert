@@ -1,14 +1,15 @@
+bugs:
+typing hsv in detect input doesnt work
+callback on color picker input isnt called if another color changes its color
+
 favorites modal
 history modal
 download history option
 download and upload favorites option
-modal for css (inputs that sy background-color, color, border-color, etc with semicolons and copy buttons)
-	dropdown select for color mode (rgb, hsl, ...)
-options modal to change size of preview
 preview modal to display text on color, color on text, color on color etc, against black, white, and other colors
 div that displys formulas
 link to color convert library on github and this repo on github
-setting for dark theme, fullscreen
+setting for dark theme, fullscreen, donate button? link to repo?
 transparency/alpha option?
 type your color or color name/detect color?
 get color name from json?
@@ -18,20 +19,16 @@ color names here for detect color: https://github.com/bahamas10/css-color-names/
 user input delete spaces to lowercase
 look for #, rgb, hsl, hsv, hsb, cmyk
 
+modal for list of all 140 color names?
 
 make js library for converting and test
-use angular js
 make js file for updating display with certain color
 make driver/main js file for controlling change of inputs, calling converter and display files
-redo css from default bootstrap
-	replacing <br>s with padding in css, bootstrap colors with my colors, use sass maybe
 
 modal for info on color models
-modal for css to copy (choose color mode (rgb, hsl, hex), checkbox for !important, and display color, backgorund-color, border-color, with copy buttons next to each)
+modal for css to copy (dropdown for color mode (rgb, hsl, hex), checkbox for !important, and display color, backgorund-color, border-color, with copy buttons next to each)
 modal for lighter/darker colors and vary by saturation too
 palettes?
 
-move to rgb site
-link to repo: https://github.com/justingolden21/color-convert
-
 add more color names?
+combine detect color and color picker inputs into one, fix typing color names into color-picker input resulting in NAN
