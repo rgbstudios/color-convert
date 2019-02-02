@@ -32,8 +32,6 @@ modal for lighter/darker colors and vary by saturation too
 palettes?
 
 
-add animated logo
 move to rgb site
 make pwa
 edit readme with more detail
-dynamic chnage theme color
