@@ -31,7 +31,6 @@ modal for css to copy (choose color mode (rgb, hsl, hex), checkbox for !importan
 modal for lighter/darker colors and vary by saturation too
 palettes?
 
-
 move to rgb site
 make pwa
-edit readme with more detail
+link to repo: https://github.com/justingolden21/color-convert

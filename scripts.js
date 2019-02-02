@@ -1,9 +1,5 @@
 // todo:
-
 // "cmyk-" in the textbox breaks it?
-
-//bug: first time you click on some stuff it doesnt work like random button, some inputs...
-
 //make note when they enter cmyk to get another color it's because it's converting it with/without key, they're both the same color
 
 let isSlick = false;
@@ -18,7 +14,6 @@ $(function() {
 			setColor($('#hsl-input').val() );
 		}
 	});
-
 	$('#random-btn').click(function() {
 		setRGB( { r : randInt(0,255), g : randInt(0,255), b : randInt(0,255) } );
 		setColor($('#rgb-input').val() );
@@ -43,9 +38,8 @@ $(function() {
 		input.setSelectionRange(0, input.value.length);
 		document.execCommand('copy');
 	});
-
+	
 	$('#color-picker').click();
-
 	$('#color-detect-input').select();
 
 	$('#color-detect-input').change(function() {
@@ -189,7 +183,6 @@ $(function() {
 	let q = url.searchParams.get('q');
 	if(q)
 		setColor('#'+q);
-
 });
 
 function clamp(num, min, max) {
@@ -360,7 +353,6 @@ function setColor(str) { //using w3 library
 	if(q)
 		history.replaceState({}, '', '?q=' + $('#hex-input').val().substr(1) );
 
-
 	$('#picker').css('fill', hex);
 	$('#drop').css('fill', hex);
 
@@ -373,9 +365,6 @@ function HWBtoHSV(hwb) {
 	if(isNaN(hsv.s) )
 		hsv.s = 1;
 	return hsv;
-}
-function HSVtoHWB(hsv) {
-	return {h:hsv.h, w: (1-hsv.s)*hsv.v, b: 1-hsv.v};
 }
 
 //https://en.wikipedia.org/wiki/HSL_and_HSV#Conversion_HSV_to_HSL
@@ -429,9 +418,8 @@ function checkSlick() {
 
 $(window).click(function(e) {
 	// fix for clicking on an input while it's open
-	if(e.target.id != '#color-picker') {
+	if(e.target.id != '#color-picker')
 		$('#color-picker').colorPicker('close');
-	}
 });
 
 window.onkeyup = function(e) {
