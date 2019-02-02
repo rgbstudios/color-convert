@@ -1,4 +1,4 @@
-# <img src="logo/logo-moving.svg" width="72px"> [Color Convert](https://justingolden21.github.io/color-convert/)
+# <img src="img/logo-moving.svg" width="72px"> [Color Convert](https://justingolden21.github.io/color-convert/)
 
 ### About
 

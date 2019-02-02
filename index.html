@@ -7,12 +7,13 @@
 <meta name="title=" content="Color Convert">
 <meta name="robots" content="index, follow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="a color converter">
+<meta name="description" content="A simple color converter / color picker">
 <meta name="keywords" content="webpage, template">
-<meta class="theme" name="theme-color" content="hsl(0, 0%, 90%)">
-<meta class="theme" name="msapplication-navbutton-color" content="hsl(0, 0%, 90%)">
-<meta class="theme" name="apple-mobile-web-app-status-bar-style" content="hsl(0, 0%, 90%)">
-<link rel="shortcut icon" href="logo/logo-red.png">
+<meta class="theme" name="theme-color" content="#000">
+<meta class="theme" name="msapplication-navbutton-color" content="#000">
+<meta class="theme" name="apple-mobile-web-app-status-bar-style" content="#000">
+<link rel="shortcut icon" href="img/logo-red.png">
+<link rel="manifest" href="manifest.webmanifest">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
@@ -31,6 +32,18 @@
 
 <link rel="stylesheet" href="styles.css">
 <script src="scripts.js"></script>
+
+<script>
+//https://codelabs.developers.google.com/codelabs/add-to-home-screen/#5
+if('serviceWorker' in navigator) {
+	navigator.serviceWorker.register('service-worker.js')
+		.then(function(reg){
+			console.log("Service worker successfully registered");
+	}).catch(function(err) {
+			console.log("Service worker registration failed: ", err);
+	});
+}
+</script>
 
 </head>
 
