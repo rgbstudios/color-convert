@@ -1,8 +1,10 @@
-# <img src="img/logo-moving.svg" width="72px"> [Color Convert](https://justingolden21.github.io/color-convert/)
+# <img src="img/logo-moving.svg" width="72px"> Color Convert &mdash; RGB Studios
 
-### About
+**https://rgbstudios.org/color-convert/**
 
 **A simple color converter / color picker**
+
+### About
 
 - Switch between RGB, CMYK, HSL, and HSV color modes
 
@@ -10,7 +12,7 @@
 
 <hr>
 
-- Type or paste your color right when the page loads, type it in any color format, or any one of 140 names for colors, such as "seagreen"
+- Type or paste your color right when the page loads, type it in any color format, or any one of 140 names for colors, such as "seagreen." Supports all [140 color names used in browsers](https://www.w3schools.com/tags/ref_colornames.asp)
 
 - Use the color picker GUI right below to find your perfect color
 
@@ -30,14 +32,20 @@
 
 ### Links
 
-- Live demo: https://justingolden21.github.io/color-convert/
+Website: https://rgbstudios.org/color-convert/
 
-- This repo: https://github.com/justingolden21/color-convert
+Repo: https://github.com/rgbstudios/color-convert
+
+### Credit
+
+Using [Slick](http://kenwheeler.github.io/slick/), [tinyColorPicker](https://github.com/PitPik/tinyColorPicker), [w3color.js](https://www.w3schools.com/lib/w3color.js), and [Font Awesome](https://fontawesome.com/)
 
 <hr>
 
-- My portfolio: https://justingolden21.github.io
+**by [Justin Golden](https://justingolden21.github.io) for [RGB Studios](https://rgbstudios.org)**
 
-- My repos: https://github.com/justingolden21
+*RGB Studios Homepage: https://rgbstudios.org*
 
-- Contact me: [justingolden@rgbstudios.org](mailto:justingolden@rgbstudios.org)
+*Contact RGB Studios: contact@rgbstudios.org*
+
+*RGB Studios on GitHub: https://github.com/rgbstudios*
