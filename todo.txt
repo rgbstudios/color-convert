@@ -27,7 +27,7 @@ redo css from default bootstrap
 	replacing <br>s with padding in css, bootstrap colors with my colors, use sass maybe
 
 modal for info on color models
-modal for css to copy
+modal for css to copy (choose color mode (rgb, hsl, hex), checkbox for !important, and display color, backgorund-color, border-color, with copy buttons next to each)
 modal for lighter/darker colors and vary by saturation too
 palettes?
 
