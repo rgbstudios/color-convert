@@ -1,4 +1,4 @@
-# <img src="logo/logo-animated.svg" width="72px"> Color Convert
+# <img src="logo/logo-moving.svg" width="72px"> Color Convert
 
 ### About
 
