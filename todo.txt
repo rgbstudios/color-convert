@@ -32,5 +32,4 @@ modal for lighter/darker colors and vary by saturation too
 palettes?
 
 move to rgb site
-make pwa
 link to repo: https://github.com/justingolden21/color-convert
