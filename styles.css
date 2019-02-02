@@ -41,18 +41,22 @@ input {
 
 button {
 	border: 1px solid;
-	background-color: #333;
-	color: #fff;
+	background-color: #fff; /* will change */
+	color: #000; /* will change */
 }
 
 #title-header {
-	color: #000; /* color will change when selected */
 	border-radius: 20px;
 	padding: 10px;
+	display: inline !important;
 }
 
 .slick-arrow:before { 
 	color: #000 !important;
+}
+
+#logo-animated {
+	width: 64px;
 }
 
 @media (max-width: 768px) {

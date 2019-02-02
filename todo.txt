@@ -35,3 +35,4 @@ palettes?
 add animated logo
 move to rgb site
 make pwa
+edit readme with more detail

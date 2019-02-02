@@ -12,7 +12,7 @@
 <meta name="theme-color" content="hsl(0, 0%, 90%)">
 <meta name="msapplication-navbutton-color" content="hsl(0, 0%, 90%)">
 <meta name="apple-mobile-web-app-status-bar-style" content="hsl(0, 0%, 90%)">
-<link rel="shortcut icon" href="icon.png">
+<link rel="shortcut icon" href="logo/logo-red.png">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
@@ -42,8 +42,25 @@
 	<br>
 	<div class="row">
 		<div class="col-lg-4 col-md-6">
+
+			<svg id="logo-animated" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 72 72">
+			<g stroke-width="3" stroke-linejoin="round">
+			<polygon id="picker" fill="#000" points="48,32 24,56 16,56 16,48 32,32"/>
+			<path fill="#333" stroke="#333" d="M48,16c0,0,0-4,4-4s8,4,8,8s-4,4-4,4"/>
+			<circle fill="#333" stroke="#333" cx="60" cy="12" r="8"/>
+			<polygon fill="none" stroke="#333" points="32,32 16,48 16,56 24,56 48,32 56,24 48,16"/>
+			<path id="motionPath" fill="none" d="M0,0,v48"/>
+			<path id="drop" fill="#000" stroke="#333" d="M14.9,67.2c-1.1,0-2.2-0.6-3.2-1.9c-0.8-1-1.1-1.9-0.9-3c0.4-2.5,3.2-4.6,4.3-5.4c2.4,1.6,3.8,3.3,4.1,5.1
+				c0.3,1.9-0.8,3.3-0.8,3.3C18.4,65.3,16.8,67.2,14.9,67.2L14.9,67.2z"/>
+			<animateMotion
+				xlink:href="#drop"
+				dur="2s" repeatCount="indefinite">
+				<mpath xlink:href="#motionPath"/>
+			</animateMotion>
+			</g></svg>
+
 			<h3 id="title-header">
-				<i class="fas fa-eye-dropper fa-2x"></i> Color Converter
+				Color Converter
 			</h3>
 		</div>
 		<div class="col-lg-4 col-md-6">

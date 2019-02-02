@@ -339,11 +339,18 @@ function setColor(str) { //using w3 library
 	setHSV(hsv);
 
 	let hex = $('#hex-input').val();
+	
 	$('#title-header').css('color', hex);
-	if(hsl.l>50)
+	$('.btn').css('color', hex);
+	if(hsl.l>50) {
 		$('#title-header').css('background-color', '#000');
-	else
+		$('.btn').css('background-color', '#000');
+	}
+	else {
 		$('#title-header').css('background-color', '#fff');
+		$('.btn').css('background-color', '#fff');
+	}
+
 	$('#color-picker').val(hex );
 	$('#color-picker').css('background-color', hex);
 
@@ -352,6 +359,11 @@ function setColor(str) { //using w3 library
 	let q = url.searchParams.get('q');
 	if(q)
 		history.replaceState({}, '', '?q=' + $('#hex-input').val().substr(1) );
+
+
+	$('#picker').css('fill', hex);
+	$('#drop').css('fill', hex);
+
 
 }
 
