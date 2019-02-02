@@ -364,7 +364,7 @@ function setColor(str) { //using w3 library
 	$('#picker').css('fill', hex);
 	$('#drop').css('fill', hex);
 
-
+	$('.theme').attr('content', hex);
 }
 
 //https://en.wikipedia.org/wiki/HWB_color_model
