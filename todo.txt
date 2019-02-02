@@ -33,3 +33,5 @@ palettes?
 
 move to rgb site
 link to repo: https://github.com/justingolden21/color-convert
+
+add more color names?
