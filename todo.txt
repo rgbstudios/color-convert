@@ -31,3 +31,5 @@ palettes?
 
 add more color names?
 combine detect color and color picker inputs into one, fix typing color names into color-picker input resulting in NAN
+
+use angular to make code simpler
