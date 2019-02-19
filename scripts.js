@@ -310,6 +310,20 @@ function setHSV(hsv) {
 }
 
 function setColor(str) { //using w3 library
+	if(str.indexOf('hsv') != -1 || str.indexOf('hsb') != -1) { // special case for hsv/hsb
+		let strArr = str.replace(' ',',').split(','); // split into array based off commas and/or spaces
+		for(let i=0; i<strArr.length; i++)
+			strArr[i] = parseFloat(strArr[i].replace(/[^\d.]/g, '') ); // regex removes non digits and periods
+		strArr = strArr.filter(function(arr) {
+			return ! isNaN(arr);
+		});
+
+		let convertedHSL = HSVtoHSL( {h: strArr[0], s: strArr[1]/100, v: strArr[2]/100} );
+		console.log(convertedHSL);
+		setColor('hsl(' + convertedHSL.h + ', ' + convertedHSL.s*100 + '%, ' + convertedHSL.l*100 + '%)'); // call setColor with converted HSL value
+		return;
+	}
+
 	let c = w3color(str);
 	if(!c.valid) return false;
 

@@ -1,5 +1,4 @@
 bugs:
-typing hsv in detect input doesnt work
 callback on color picker input isnt called if another color changes its color
 
 favorites modal
