@@ -2,7 +2,7 @@ bugs:
 callback on color picker input isnt called if another color changes its color
 
 favorites modal
-history modal
+***history modal
 download history option
 download and upload favorites option
 preview modal to display text on color, color on text, color on color etc, against black, white, and other colors

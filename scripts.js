@@ -323,6 +323,8 @@ function setColor(str) { //using w3 library
 		setColor('hsl(' + convertedHSL.h + ', ' + convertedHSL.s*100 + '%, ' + convertedHSL.l*100 + '%)'); // call setColor with converted HSL value
 		return;
 	}
+	
+	console.log(str);
 
 	let c = w3color(str);
 	if(!c.valid) return false;
