@@ -1,6 +1,9 @@
 bugs:
 callback on color picker input isnt called if another color changes its color
 
+how to use/help modal, with info about color modes, how to use copy btns, etc. donate, share, github readme links
+add pantones, more color stuff? gradients?
+
 favorites modal
 ***history modal
 download history option
@@ -33,3 +36,5 @@ add more color names?
 combine detect color and color picker inputs into one, fix typing color names into color-picker input resulting in NAN
 
 use angular to make code simpler
+
+toast for copied link btn
