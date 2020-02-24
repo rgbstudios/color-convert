@@ -34,7 +34,7 @@ $(function() {
 		tmp.select();
 		document.execCommand('copy');
 		tmp.remove();
-		makeToast('<i class="fas fa-check"></i> Copied','Link copied successfully');
+		makeToast('<i class="fas fa-check"></i> Copied','<b>Link copied successfully</b><br>' + $('#hex-input').val() );
 	});
 	$('.btn-copy').click(function() {
 		let input = $(this).parent().parent().children()[0];
@@ -424,7 +424,7 @@ function makeToast(title, body) {
 		'<div id="toast-' + (++toastIdx) + '" class="toast m-auto" data-autohide="false">'
 	+	'<div class="toast-header">'
 	+		'<h5 class="mr-auto">' + title + '</h5>'
-	+		'<button type="button" class="close p-1" data-dismiss="toast">&times;</button>'
+	+		'<button type="button" class="close py-1 px-2" data-dismiss="toast">&times;</button>'
 	+	'</div>'
 	+	'<div class="toast-body">'
 	+		body
@@ -434,7 +434,7 @@ function makeToast(title, body) {
 
 	let toastID = '#toast-' + toastIdx;
 	$(toastID).toast('show');
-	setTimeout( ()=> $(toastID).toast('hide'), 3000);
+	setTimeout( ()=> $(toastID).toast('hide'), 2500);
 }
 
 $(window).resize(checkSlick);
