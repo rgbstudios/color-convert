@@ -63,6 +63,7 @@ button:hover:not(.close), button:hover:focus:not(.close) {
 	border-radius: 10px;
 	padding: 10px;
 	display: inline !important;
+	font-weight: normal;
 }
 
 .slick-arrow:before { 

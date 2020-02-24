@@ -41,3 +41,8 @@ use angular to make code simpler
 use realfavicongenerator.net
 
 add settings such as copy hex without "#", convert hex to lowercase, etc
+
+find color from img
+get palette from img
+
+random color within certain limits? like range of limits or stay at same saturation?
