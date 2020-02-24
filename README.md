@@ -16,6 +16,8 @@
 
 - Use the color picker GUI right below to find your perfect color
 
+<img src="img/screenshot-gui-picker.png">
+
 <hr>
 
 - Click the link button to generate a link to your color, and copy it to your clipboard
@@ -36,7 +38,7 @@ Website: https://rgbstudios.org/color-convert/
 
 Repo: https://github.com/rgbstudios/color-convert
 
-### Credit
+### Made With
 
 Using [Slick](http://kenwheeler.github.io/slick/), [tinyColorPicker](https://github.com/PitPik/tinyColorPicker), [w3color.js](https://www.w3schools.com/lib/w3color.js), and [Font Awesome](https://fontawesome.com/)
 

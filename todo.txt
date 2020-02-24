@@ -1,5 +1,6 @@
 bugs:
 callback on color picker input isnt called if another color changes its color
+when typing a light color (ex. aquamarine) the jquery color picker won't update its text color for correct contrast
 
 how to use/help modal, with info about color modes, how to use copy btns, etc. donate, share, github readme links
 add pantones, more color stuff? gradients?
