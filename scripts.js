@@ -40,6 +40,9 @@ $(function() {
 		input.setSelectionRange(0, input.value.length);
 		document.execCommand('copy');
 		makeToast('<i class="fas fa-check"></i> Copied','<b>Color copied successfully</b><br>' + input.value);
+		if(window.innerWidth < 992) { // if mobile then unfocus input for cleaner experience
+			$(this).focus();
+		}
 	});
 	
 	$('#color-picker').click();
