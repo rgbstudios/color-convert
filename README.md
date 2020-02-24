@@ -38,7 +38,7 @@
 
 - On mobile, swipe between different color modes, on desktop, view all four at once
 
-<img src="img/screenshot-mobile.png">
+<img src="img/screenshot-mobile.png" width="256px">
 
 ### Links
 
