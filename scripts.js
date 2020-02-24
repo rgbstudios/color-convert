@@ -355,15 +355,15 @@ function setColor(str) { //using w3 library
 
 	let hex = $('#hex-input').val();
 	
-	$('#title-header').css('color', hex);
+	// $('#title-header').css('color', hex);
 	$('.btn').css('color', hex);
 	if(hsl.l>50) {
-		$('#title-header').css('background-color', '#000');
-		$('.btn').css('background-color', '#000');
+		// $('#title-header').css('background-color', '#000');
+		$('.btn').addClass('dark');
 	}
 	else {
-		$('#title-header').css('background-color', '#fff');
-		$('.btn').css('background-color', '#fff');
+		// $('#title-header').css('background-color', '#fff');
+		$('.btn').removeClass('dark');
 	}
 
 	$('#color-picker').val(hex);

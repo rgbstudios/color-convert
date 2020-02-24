@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Color Convert</title>
 
+<!-- Metadata -->
+
+<title>Color Convert</title>
 <meta charset="utf-8">
 <meta name="title=" content="Color Convert">
 <meta name="robots" content="index, follow">
@@ -12,23 +14,27 @@
 <meta class="theme" name="theme-color" content="#000">
 <meta class="theme" name="msapplication-navbutton-color" content="#000">
 <meta class="theme" name="apple-mobile-web-app-status-bar-style" content="#000">
-<link rel="shortcut icon" href="img/logo-red.png">
+<link rel="shortcut icon" href="img/logo-64.png">
 <link rel="manifest" href="manifest.webmanifest">
 
+<!-- CDNs -->
+
+<!-- jQuery, FontAwesome, Bootstrap CDNs -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
-<!-- slick -->
+<!-- Slick CDNs -->
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"/>
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"/>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-
+<!-- jQuery Color Picker and W3 Color Library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tinyColorPicker/1.1.1/jqColorPicker.min.js"></script>
 <script src="https://www.w3schools.com/lib/w3color.js"></script>
-
+<!-- Font -->
 <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
+
+<!-- Local Links -->
 
 <link rel="stylesheet" href="styles.css">
 <script src="scripts.js"></script>
@@ -69,7 +75,8 @@ if('serviceWorker' in navigator) {
 				dur="3s" repeatCount="indefinite">
 				<mpath xlink:href="#motionPath"/>
 			</animateMotion>
-			</g></svg>
+			</g>
+			</svg>
 
 			<h3 id="title-header">
 				Color Converter
@@ -109,7 +116,6 @@ if('serviceWorker' in navigator) {
 
 			</div>
 			<div class="col-md-6">
-				<!-- <h5>Hex:</h5> -->
 				<div class="input-group">
 					<input id="hex-input" type="text" class="form-control input-lg " value="#000000" placeholder="Type your Hex color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
 					<div class="input-group-append">
@@ -254,8 +260,6 @@ if('serviceWorker' in navigator) {
 	</div>
 
 </div>
-
-<br>
 
 </div>
 </body>

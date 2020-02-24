@@ -47,13 +47,20 @@ input {
 }
 
 button {
+	margin-right: 5px;
 	border: 1px solid;
-	background-color: #fff; /* will change */
-	color: #000; /* will change */
+	background-color: #fff; /* changes with color */
+	color: #000; /* changes with color */
+}
+button.dark {
+	background-color: #000;
+}
+button:hover, button:hover:focus {
+	box-shadow: 4px 4px 0px #000;
 }
 
 #title-header {
-	border-radius: 20px;
+	border-radius: 10px;
 	padding: 10px;
 	display: inline !important;
 }
