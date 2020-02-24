@@ -4,11 +4,15 @@
 
 **A simple color converter / color picker**
 
+<img src="img/screenshot-desktop.png">
+
 ### About
 
 - Switch between RGB, CMYK, HSL, and HSV color modes
 
 - Featuring quick copy buttons, great for CSS
+
+<img src="img/screenshot-color-modes.png">
 
 <hr>
 
@@ -26,11 +30,15 @@
 
 - Click the random button for a random color
 
+<img src="img/screenshot-top-buttons.png">
+
 <hr>
 
 - When you pick a color, it's featured on our animated logo, our buttons, and on mobile in the theme color
 
 - On mobile, swipe between different color modes, on desktop, view all four at once
+
+<img src="img/screenshot-mobile.png">
 
 ### Links
 
