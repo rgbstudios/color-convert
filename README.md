@@ -1,4 +1,4 @@
-# <img src="img/logo-red.svg" width="72px"> Color Convert &mdash; RGB Studios
+# <img src="img/logo-aquamarine.svg" width="72px"> Color Convert &mdash; RGB Studios
 
 **https://rgbstudios.org/color-convert/**
 
@@ -16,7 +16,7 @@
 
 <hr>
 
-- Type or paste your color right when the page loads, type it in any color format, or any one of 140 names for colors, such as "seagreen." Supports all [140 color names used in browsers](https://www.w3schools.com/tags/ref_colornames.asp)
+- Type or paste your color right when the page loads, type it in any color format, or any one of 140 names for colors, such as "aquamarine." Supports all [140 color names used in browsers](https://www.w3schools.com/tags/ref_colornames.asp)
 
 - Use the color picker GUI right below to find your perfect color
 

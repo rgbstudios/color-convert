@@ -39,3 +39,5 @@ combine detect color and color picker inputs into one, fix typing color names in
 use angular to make code simpler
 
 use realfavicongenerator.net
+
+add settings such as copy hex without "#", convert hex to lowercase, etc
