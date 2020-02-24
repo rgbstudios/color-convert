@@ -12,7 +12,7 @@
 
 - Featuring quick copy buttons, great for CSS
 
-<img src="img/screenshot-color-modes.png">
+<img src="img/screenshot-rgb-mode.png">
 
 <hr>
 
