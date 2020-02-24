@@ -32,12 +32,14 @@ $(function() {
 		tmp.select();
 		document.execCommand('copy');
 		tmp.remove();
+		makeToast('<i class="fas fa-check"></i> Copied','Link copied successfully');
 	});
 	$('.btn-copy').click(function() {
 		let input = $(this).parent().parent().children()[0];
 		input.focus();
 		input.setSelectionRange(0, input.value.length);
 		document.execCommand('copy');
+		makeToast('<i class="fas fa-check"></i> Copied','<b>Color copied successfully</b><br>' + input.value);
 	});
 	
 	$('#color-picker').click();
@@ -411,6 +413,25 @@ function randInt(min, max) {
 	return Math.floor(Math.random() * (max - min + 1) ) + min;
 }
 
+let toastIdx = 0;
+function makeToast(title, body) {
+	$('.container').append(
+		'<div id="toast-' + (++toastIdx) + '" class="toast m-auto" data-autohide="false">'
+	+	'<div class="toast-header">'
+	+		'<h5 class="mr-auto">' + title + '</h5>'
+	+		'<button type="button" class="close p-1" data-dismiss="toast">&times;</button>'
+	+	'</div>'
+	+	'<div class="toast-body">'
+	+		body
+	+	'</div>'
+	+	'</div>'
+	);
+
+	let toastID = '#toast-' + toastIdx;
+	$(toastID).toast('show');
+	setTimeout( ()=> $(toastID).toast('hide'), 3000);
+}
+
 $(window).resize(checkSlick);
 
 function checkSlick() {
@@ -439,6 +460,6 @@ $(window).click(function(e) {
 		$('#color-picker').colorPicker('close'); //todo: this is causing problems for not rendering color-picker's val after another element was clicked
 });
 
-window.onkeyup = function(e) {
-	let key = e.keyCode ? e.keyCode : e.which;
-}
+// window.onkeyup = function(e) {
+// 	let key = e.keyCode ? e.keyCode : e.which;
+// }

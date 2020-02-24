@@ -22,8 +22,16 @@ img, button, br {
 body, button {
 	color: #333;
 }
-hr, input, .inner-div, button {
+hr, input, .inner-div, button, .toast {
+	border: 1px solid;
 	border-color: #ccc !important;
+	border-radius: 5px;
+}
+.toast {
+	box-shadow: none;
+}
+.toast-header {
+	border-color: #ccc;
 }
 
 input {
@@ -36,8 +44,6 @@ input {
 .inner-div {
 	padding: 20px !important;
 	margin: 10px !important;
-	border: 1px solid;
-	border-radius: 5px;
 }
 
 button {
@@ -53,13 +59,18 @@ button {
 }
 
 .slick-arrow:before { 
-	color: #000 !important;
+	color: #333 !important;
 }
 
 #logo-animated {
 	width: 64px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) { /* md */
+	.toast {
+		position: absolute;
+		bottom: 5px;
+		margin-bottom: 15px !important;
+	}
 
 }
