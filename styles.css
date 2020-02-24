@@ -58,6 +58,11 @@ button.dark {
 button:hover:not(.close), button:hover:focus:not(.close) {
 	box-shadow: 4px 4px 0px #000;
 }
+.info-btn {
+	position: absolute;
+	left: 30px;
+	top: 30px;
+}
 
 #title-header {
 	border-radius: 10px;
@@ -72,6 +77,17 @@ button:hover:not(.close), button:hover:focus:not(.close) {
 
 #logo-animated {
 	width: 64px;
+}
+
+.popover-header {
+	background-color: #fff;
+	border-color: #ccc;
+	border-radius: 5px;
+	font-weight: normal;
+	border-bottom: 1px;
+}
+.popover-body {
+	display: none;
 }
 
 @media (max-width: 992px) { /* md */

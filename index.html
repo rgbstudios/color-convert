@@ -22,6 +22,7 @@
 <!-- jQuery, FontAwesome, Bootstrap CDNs -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <!-- Slick CDNs -->
@@ -87,7 +88,19 @@ if('serviceWorker' in navigator) {
 			<br>
 			<button id="link-btn" class="btn"><i class="fas fa-link"></i> Link</button>
 			<button id="reset-btn" class="btn"><i class="fas fa-sync-alt"></i> Reset</button>
-			<button id="random-btn" class="btn"><i class="fas fa-dice"></i> Random</button>
+			<button id="random-btn" class="btn"><i class="fas fa-dice-five"></i> Random</button>
+
+			<!-- TODO -->
+			<button class="btn my-2" data-toggle="dropdown">
+				<i class="fas fa-ellipsis-v"></i>
+			</button>
+			<div class="dropdown-menu">
+				<a class="dropdown-item" href="#"><i class="fas fa-info"></i> Info</a>
+				<a class="dropdown-item" href="#"><i class="fas fa-question"></i> Help</a>
+				<a class="dropdown-item" href="#"><i class="fas fa-cog"></i> Settings</a>
+				<a class="dropdown-item" href="#"><i class="fas fa-plus"></i> More</a>
+			</div>
+
 		</div>
 		<div class="col-lg-4 col-md-12">
 			<br>
@@ -106,12 +119,17 @@ if('serviceWorker' in navigator) {
 
 		<h3>RGB</h3>
 
+		<!-- TODO -->
+		<button class="btn info-btn" title="About RGB" data-toggle="popover">
+			<i class="fas fa-info"></i>
+		</button>
+
 		<div class="row">
 			<div class="col-md-6">
 				<div class="input-group">
 					<input id="rgb-input" type="text" class="form-control input-lg " value="rgb(0, 0, 0)" placeholder="Type your RGB color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
 					<div class="input-group-append">
-						<button class="btn btn-default btn-copy"><i class="fas fa-copy"></i> </button>
+						<button class="btn btn-default btn-copy" title="Copy" data-toggle="popover"><i class="fas fa-copy"></i> </button>
 					</div>
 				</div>
 
@@ -120,7 +138,7 @@ if('serviceWorker' in navigator) {
 				<div class="input-group">
 					<input id="hex-input" type="text" class="form-control input-lg " value="#000000" placeholder="Type your Hex color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
 					<div class="input-group-append">
-						<button class="btn btn-default btn-copy"><i class="fas fa-copy"></i> </button>
+						<button class="btn btn-default btn-copy" title="Copy" data-toggle="popover"><i class="fas fa-copy"></i> </button>
 					</div>
 				</div>
 
@@ -156,10 +174,15 @@ if('serviceWorker' in navigator) {
 
 		<h3>CMYK</h3>
 
+		<!-- TODO -->
+		<button class="btn info-btn" title="About CMYK" data-toggle="popover">
+			<i class="fas fa-info"></i>
+		</button>
+
 		<div class="input-group">
 			<input id="cmyk-input" type="text" class="form-control input-lg" value="cmyk(0%, 0%, 0%, 100%)" placeholder="Type your CMYK color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
 			<div class="input-group-append">
-				<button class="btn btn-default btn-copy"><i class="fas fa-copy"></i> </button>
+				<button class="btn btn-default btn-copy" title="Copy" data-toggle="popover"><i class="fas fa-copy"></i> </button>
 			</div>
 		</div>
 
@@ -196,10 +219,15 @@ if('serviceWorker' in navigator) {
 		<div class="inner-div">
 		<h3>HSL</h3>
 
+		<!-- TODO -->
+		<button class="btn info-btn" title="About HSL" data-toggle="popover">
+			<i class="fas fa-info"></i>
+		</button>
+
 		<div class="input-group">
 			<input id="hsl-input" type="text" class="form-control input-lg" value="hsl(0, 0%, 0%)" placeholder="Type your HSL color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
 			<div class="input-group-append">
-				<button class="btn btn-default btn-copy"><i class="fas fa-copy"></i> </button>
+				<button class="btn btn-default btn-copy" title="Copy" data-toggle="popover"><i class="fas fa-copy"></i> </button>
 			</div>
 		</div>
 
@@ -231,10 +259,15 @@ if('serviceWorker' in navigator) {
 		<div class="inner-div">
 		<h3>HSV / HSB</h3>
 
+		<!-- TODO -->
+		<button class="btn info-btn" title="About HSV" data-toggle="popover">
+			<i class="fas fa-info"></i>
+		</button>
+
 		<div class="input-group">
 			<input id="hsv-input" type="text" class="form-control input-lg" value="hsv(0, 0%, 0%)" placeholder="Type your HSV color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
 			<div class="input-group-append">
-				<button class="btn btn-default btn-copy"><i class="fas fa-copy"></i> </button>
+				<button class="btn btn-default btn-copy" title="Copy" data-toggle="popover"><i class="fas fa-copy"></i> </button>
 			</div>
 		</div>
 
@@ -261,6 +294,12 @@ if('serviceWorker' in navigator) {
 	</div>
 
 </div>
+
+<br>
+<!-- TODO -->
+<button id="history-btn" class="btn" title="History" data-toggle="popover"><i class="fas fa-history"></i></button>
+<button id="favorite-btn" class="btn" title="Favorite" data-toggle="popover"><i class="far fa-heart"></i> </button>
+<button id="view-favorites-btn" class="btn" title="View Favorites" data-toggle="popover"><i class="far fa-heart"></i> <i class="fas fa-list"></i></button>
 
 </div>
 </body>

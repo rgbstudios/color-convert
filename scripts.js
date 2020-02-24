@@ -6,6 +6,8 @@ let isSlick = false;
 
 $(function() {
 
+	 $('[data-toggle="popover"]').popover({trigger:'hover', placement:'bottom'});
+
 	checkSlick();
 
 	$('#color-picker').colorPicker({opacity:false, renderCallback: 

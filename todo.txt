@@ -16,7 +16,7 @@ setting for dark theme, fullscreen, donate button? link to repo?
 transparency/alpha option?
 type your color or color name/detect color?
 get color name from json?
-favorites list you can name them and edit them, search by name, sort by name or date
+favorites list you can name them and edit them, search by name, sort by name or date, remove, and download/upload
 
 color names here for detect color: https://github.com/bahamas10/css-color-names/blob/master/css-color-names.json
 user input delete spaces to lowercase
@@ -46,3 +46,16 @@ find color from img
 get palette from img
 
 random color within certain limits? like range of limits or stay at same saturation?
+
+feedback/contact email btn
+
+--------------------------------
+STUFF TO ADD TO UI
+history & favorites (clickable, downloadable) & removable and organizable, add favorite
+color info: info on color modes (each btn takes to the right tab on the same modal that has color mode info)
+	color mode formulas? can be in tabs
+help: info about UI and how to use
+info btn: contact, donate, help, fullscreen, about info and git links etc btns
+settings btn: settings stuff
+preview: preview color on text and on black, white, etc more preview options in modal
+css: css modal for copy with dropdown options of color, background-color, border-color, etc, and checkbox for !important
