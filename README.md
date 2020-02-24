@@ -1,4 +1,4 @@
-# <img src="img/logo-moving.svg" width="72px"> Color Convert &mdash; RGB Studios
+# <img src="img/logo-red.svg" width="72px"> Color Convert &mdash; RGB Studios
 
 **https://rgbstudios.org/color-convert/**
 
