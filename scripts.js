@@ -457,11 +457,13 @@ function checkSlick() {
 	}	
 }
 
+/*
 $(window).click(function(e) {
 	// fix for clicking on an input while it's open
 	if(e.target.id != '#color-picker')
 		$('#color-picker').colorPicker('close'); //todo: this is causing problems for not rendering color-picker's val after another element was clicked
 });
+*/
 
 // window.onkeyup = function(e) {
 // 	let key = e.keyCode ? e.keyCode : e.which;
