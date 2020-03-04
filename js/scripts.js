@@ -2,16 +2,25 @@
 // "cmyk-" in the textbox breaks it?
 //make note when they enter cmyk to get another color it's because it's converting it with/without key, they're both the same color
 
+// BUG: first time they try to change the color or click random it doesnt work?
+
 let isSlick = false;
 
 $(function() {
+	$('#history-items').sortable();
+	$('#favorite-items').sortable();
 
+<<<<<<< Updated upstream:scripts.js
+=======
+	$('[data-toggle="popover"]').popover({trigger:'hover', placement:'bottom'});
+
+>>>>>>> Stashed changes:js/scripts.js
 	checkSlick();
 
-	$('#color-picker').colorPicker({opacity:false, renderCallback: 
+	$('#color-picker').colorPicker({opacity:false, dark: '#000', light: '#fff',  margin: -1, animationSpeed: 250, renderCallback: 
 		function(elm, toggled) {
 			$('#hsl-input').val(elm.val() );
-			setColor($('#hsl-input').val() );
+			setColor($('#hsl-input').val(), false);
 			console.log('callback called');
 		}
 	});
@@ -27,12 +36,9 @@ $(function() {
 	$('#link-btn').click(function() {
 		//don't store '#' in url or it messes it up
 		history.replaceState({}, '', '?q=' + $('#hex-input').val().substr(1) );
-		let tmp = $('<input type="text">').appendTo(document.body);
-		tmp.val(window.location.href);
-		tmp.select();
-		document.execCommand('copy');
-		tmp.remove();
+		copyText(window.location.href);
 		makeToast('<i class="fas fa-check"></i> Copied','<b>Link copied successfully</b><br>' + $('#hex-input').val() );
+		$('#link-btn').focus();
 	});
 	$('.btn-copy').click(function() {
 		let input = $(this).parent().parent().children()[0];
@@ -45,7 +51,7 @@ $(function() {
 		}
 	});
 	
-	$('#color-picker').click();
+	$('#color-picker').click(); // commenting might fix some bugs with converting back and fourth on load url param
 	$('#color-detect-input').select();
 
 	$('#color-detect-input').change(function() {
@@ -314,7 +320,7 @@ function setHSV(hsv) {
 	$('#hsv-value-input-range').val(v);
 }
 
-function setColor(str) { //using w3 library
+function setColor(str, updateColorPicker=true) { //using w3 library
 	if(str.indexOf('hsv') != -1 || str.indexOf('hsb') != -1) { // special case for hsv/hsb
 		let strArr = str.replace(' ',',').split(','); // split into array based off commas and/or spaces
 		for(let i=0; i<strArr.length; i++)
@@ -324,17 +330,19 @@ function setColor(str) { //using w3 library
 		});
 
 		let convertedHSL = HSVtoHSL( {h: strArr[0], s: strArr[1]/100, v: strArr[2]/100} );
-		console.log(convertedHSL);
+		// console.log(convertedHSL);
 		setColor('hsl(' + convertedHSL.h + ', ' + convertedHSL.s*100 + '%, ' + convertedHSL.l*100 + '%)'); // call setColor with converted HSL value
 		return;
 	}
 	
-	console.log(str);
+	// console.log(str);
 
 	let c = w3color(str);
 	if(!c.valid) return false;
 
 	setRGB(c.toRgb() );
+
+	// console.log(c.toHexString() );
 
 	let cmyk = c.toCmyk();
 	cmyk.c = Math.round(cmyk.c*100);
@@ -355,19 +363,18 @@ function setColor(str) { //using w3 library
 
 	let hex = $('#hex-input').val();
 	
-	// $('#title-header').css('color', hex);
-	$('.btn').css('color', hex);
+	$('.btn:not(.no-color)').css('color', hex);
 	if(hsl.l>50) {
-		// $('#title-header').css('background-color', '#000');
-		$('.btn').addClass('dark');
+		$('.btn:not(.no-color)').addClass('dark');
 	}
 	else {
-		// $('#title-header').css('background-color', '#fff');
-		$('.btn').removeClass('dark');
+		$('.btn:not(.no-color)').removeClass('dark');
 	}
 
 	$('#color-picker').val(hex);
 	$('#color-picker').css('background-color', hex);
+	if(updateColorPicker)
+		$('#color-picker').colorPicker().colorPicker.render();
 
 	//set url if already set
 	let url = new URL(window.location.href);
@@ -379,6 +386,13 @@ function setColor(str) { //using w3 library
 	$('#drop').css('fill', hex);
 
 	$('.theme').attr('content', hex);
+
+	addColorItem('history', hex);
+}
+
+// make sure color inputs are valid before continuing
+function refreshColor() {
+	setColor($('#color-picker').css('background-color') );
 }
 
 //https://en.wikipedia.org/wiki/HWB_color_model
@@ -422,7 +436,9 @@ function makeToast(title, body) {
 		'<div id="toast-' + (++toastIdx) + '" class="toast m-auto" data-autohide="false">'
 	+	'<div class="toast-header">'
 	+		'<h5 class="mr-auto">' + title + '</h5>'
-	+		'<button type="button" class="close py-1 px-2" data-dismiss="toast">&times;</button>'
+	+		'<button type="button" class="close py-1 px-2" data-dismiss="toast">'
+	+			'<i class="fas fa-times fa-xs"></i>'
+	+		'</button>'
 	+	'</div>'
 	+	'<div class="toast-body">'
 	+		body
@@ -457,6 +473,41 @@ function checkSlick() {
 	}	
 }
 
+<<<<<<< Updated upstream:scripts.js
+=======
+// move these to util scripts file?
+
+function copyText(str) {
+	let tmp = $('<input type="text">').appendTo(document.body);
+	tmp.val(str.toString() );
+	tmp.select();
+	document.execCommand('copy');
+	tmp.remove();
+}
+
+function downloadFile(fileName, str) {
+	let blob = new Blob([str], {type: 'text/plain'});
+	let link = document.createElement('a');
+	link.download = fileName;
+	link.href = window.URL.createObjectURL(blob);
+	link.click()
+	link.remove();
+}
+
+function capitalize(word) {
+	return word.charAt(0).toUpperCase() + word.substring(1);
+}
+
+function toggleFullscreen() {
+	if(!document.fullscreenElement) {
+		document.documentElement.requestFullscreen();
+	}
+	else if(document.exitFullscreen) {
+		document.exitFullscreen(); 
+	}
+}
+
+>>>>>>> Stashed changes:js/scripts.js
 /*
 $(window).click(function(e) {
 	// fix for clicking on an input while it's open

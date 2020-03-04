@@ -9,18 +9,32 @@
 <meta name="title=" content="Color Convert">
 <meta name="robots" content="index, follow">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="A simple color converter / color picker">
+<meta name="description" content="A simple color picker and converter, built for graphic designers and web developers">
 <meta name="keywords" content="webpage, template">
-<meta class="theme" name="theme-color" content="#000">
-<meta class="theme" name="msapplication-navbutton-color" content="#000">
-<meta class="theme" name="apple-mobile-web-app-status-bar-style" content="#000">
+<meta class="theme" name="theme-color" content="#ccc">
+<meta class="theme" name="msapplication-navbutton-color" content="#ccc">
+<meta class="theme" name="apple-mobile-web-app-status-bar-style" content="#ccc">
 <link rel="shortcut icon" href="img/logo-64.png">
 <link rel="manifest" href="manifest.webmanifest">
+
+<!-- OG Tags -->
+
+<meta property="og:url"				content="https://rgbstudios.org/color-convert">
+<meta property="og:type"			content="website">
+<meta property="og:title"			content="Color Converter - RGB Studios">
+<meta property="og:description"		content="A simple color picker and converter, built for graphic designers and web developers">
+<meta property="og:image"			content="https://rgbstudios.org/color-convert/img/logo-512.png">
+<meta property="og:image:width"		content="512">
+<meta property="og:image:height"	content="512">
 
 <!-- CDNs -->
 
 <!-- jQuery, FontAwesome, Bootstrap CDNs -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
@@ -36,8 +50,10 @@
 
 <!-- Local Links -->
 
-<link rel="stylesheet" href="styles.css">
-<script src="scripts.js"></script>
+<link rel="stylesheet" href="css/styles.css">
+<link rel="stylesheet" href="css/color-item.css">
+<script src="js/scripts.js"></script>
+<script src="js/color-item.js"></script>
 
 <script>
 //https://codelabs.developers.google.com/codelabs/add-to-home-screen/#5
@@ -62,32 +78,46 @@ if('serviceWorker' in navigator) {
 		<div class="col-lg-4 col-md-6">
 
 			<svg id="logo-animated" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 72 72">
-			<g stroke-width="3" stroke-linejoin="round">
+			<g stroke-width="2.5" stroke-linejoin="round">
 			<polygon id="picker" fill="#000" points="48,32 24,56 16,56 16,48 32,32"/>
 			<path fill="#000" stroke="#000" d="M48,16c0,0,0-4,4-4s8,4,8,8s-4,4-4,4"/>
 			<circle fill="#000" stroke="#000" cx="60" cy="12" r="8"/>
 			<polygon fill="none" stroke="#000" points="32,32 16,48 16,56 24,56 48,32 56,24 48,16"/>
-			<path id="motionPath" fill="none" d="M0,0,v96"/>
-			<path id="drop" fill="#000" stroke="#000" d="M14.9,67.2c-1.1,0-2.2-0.6-3.2-1.9c-0.8-1-1.1-1.9-0.9-3c0.4-2.5,3.2-4.6,4.3-5.4c2.4,1.6,3.8,3.3,4.1,5.1
-				c0.3,1.9-0.8,3.3-0.8,3.3C18.4,65.3,16.8,67.2,14.9,67.2L14.9,67.2z"/>
-			<animateMotion
-				xlink:href="#drop"
-				dur="3s" repeatCount="indefinite">
-				<mpath xlink:href="#motionPath"/>
-			</animateMotion>
+			<g transform="translate(14.9 67.2)">
+			<path id="drop" fill="#000" stroke="#000" d="M0,0c-1.1,0-2.2-0.6-3.2-1.9c-0.8-1-1.1-1.9-0.9-3c0.4-2.5,3.2-4.6,4.3-5.4c2.4,1.6,3.8,3.3,4.1,5.1
+				c0.3,1.9-0.8,3.3-0.8,3.3C3.5,-1.9,1.9,0,0,0L0,0z">
+				<animateTransform attributeName="transform" type="translate" dur="3s" values="0,-8.5 ; 0,0 ; 0,36 ; 0,72" repeatCount="indefinite"/>
+				<animateTransform attributeName="transform" additive="sum" type="scale" dur="3s" values="0; 1; 1; 1" repeatCount="indefinite"/>
+			</path>
+			</g>
 			</g>
 			</svg>
 
 			<h3 id="title-header">
 				Color Converter
-				<br> <small> <img src="img/rgbstudios.svg" width="32px"> RGB Studios</small>
+				<br> <small> <img id="rgb-logo" src="img/rgbstudios.svg"> RGB Studios</small>
 			</h3>
 		</div>
 		<div class="col-lg-4 col-md-6">
 			<br>
 			<button id="link-btn" class="btn"><i class="fas fa-link"></i> Link</button>
 			<button id="reset-btn" class="btn"><i class="fas fa-sync-alt"></i> Reset</button>
+<<<<<<< Updated upstream
 			<button id="random-btn" class="btn"><i class="fas fa-dice"></i> Random</button>
+=======
+			<button id="random-btn" class="btn"><i class="fas fa-dice-five"></i> Random</button>
+
+			<!-- TODO -->
+			<button class="btn my-2" data-toggle="dropdown">
+				<i class="fas fa-ellipsis-v"></i>
+			</button>
+			<div class="dropdown-menu">
+				<a class="dropdown-item" href="#" data-toggle="modal" data-target="#help-modal"><i class="fas fa-question"></i> Help</a>
+				<a class="dropdown-item" href="#" data-toggle="modal" data-target="#settings-modal"><i class="fas fa-cog"></i> Settings</a>
+				<a class="dropdown-item" href="#"><i class="fas fa-plus"></i> More</a>
+			</div>
+
+>>>>>>> Stashed changes
 		</div>
 		<div class="col-lg-4 col-md-12">
 			<br>
@@ -106,6 +136,13 @@ if('serviceWorker' in navigator) {
 
 		<h3>RGB</h3>
 
+<<<<<<< Updated upstream
+=======
+		<button onclick="$('#color-modes-tabs a[href=\'#rgb\']').tab('show');" data-toggle="modal" data-target="#color-modes-modal" class="btn info-btn" title="About RGB" data-toggle="popover">
+			<i class="fas fa-info"></i>
+		</button>
+
+>>>>>>> Stashed changes
 		<div class="row">
 			<div class="col-md-6">
 				<div class="input-group">
@@ -156,6 +193,13 @@ if('serviceWorker' in navigator) {
 
 		<h3>CMYK</h3>
 
+<<<<<<< Updated upstream
+=======
+		<button onclick="$('#color-modes-tabs a[href=\'#cmyk\']').tab('show');" data-toggle="modal" data-target="#color-modes-modal" class="btn info-btn" title="About CMYK" data-toggle="popover">
+			<i class="fas fa-info"></i>
+		</button>
+
+>>>>>>> Stashed changes
 		<div class="input-group">
 			<input id="cmyk-input" type="text" class="form-control input-lg" value="cmyk(0%, 0%, 0%, 100%)" placeholder="Type your CMYK color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
 			<div class="input-group-append">
@@ -196,6 +240,13 @@ if('serviceWorker' in navigator) {
 		<div class="inner-div">
 		<h3>HSL</h3>
 
+<<<<<<< Updated upstream
+=======
+		<button onclick="$('#color-modes-tabs a[href=\'#hsl\']').tab('show');" data-toggle="modal" data-target="#color-modes-modal" class="btn info-btn" title="About HSL" data-toggle="popover">
+			<i class="fas fa-info"></i>
+		</button>
+
+>>>>>>> Stashed changes
 		<div class="input-group">
 			<input id="hsl-input" type="text" class="form-control input-lg" value="hsl(0, 0%, 0%)" placeholder="Type your HSL color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
 			<div class="input-group-append">
@@ -231,6 +282,13 @@ if('serviceWorker' in navigator) {
 		<div class="inner-div">
 		<h3>HSV / HSB</h3>
 
+<<<<<<< Updated upstream
+=======
+		<button onclick="$('#color-modes-tabs a[href=\'#hsv\']').tab('show');" data-toggle="modal" data-target="#color-modes-modal" class="btn info-btn" title="About HSV" data-toggle="popover">
+			<i class="fas fa-info"></i>
+		</button>
+
+>>>>>>> Stashed changes
 		<div class="input-group">
 			<input id="hsv-input" type="text" class="form-control input-lg" value="hsv(0, 0%, 0%)" placeholder="Type your HSV color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
 			<div class="input-group-append">
@@ -262,8 +320,286 @@ if('serviceWorker' in navigator) {
 
 </div>
 
+<<<<<<< Updated upstream
+=======
+<br>
+<!-- TODO -->
+<span data-toggle="modal" data-target="#history-modal"><button id="history-btn" class="btn" title="History" data-toggle="popover"><i class="fas fa-history"></i></button></span>
+<button id="favorite-btn" class="btn" title="Favorite" data-toggle="popover"><i class="far fa-heart"></i></button>
+<span data-toggle="modal" data-target="#favorite-modal"><button id="view-favorites-btn" class="btn" title="View Favorites" data-toggle="popover"><i class="far fa-heart"></i> <i class="fas fa-list"></i></button></span>
+
+>>>>>>> Stashed changes
 <br><br>
 </div>
 <br>
+
+<!-- History Modal -->
+<div class="modal fade" id="history-modal" tabindex="-1" role="dialog">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title"><i class="fas fa-history"></i> History</h5>
+				<button type="button" class="close" data-dismiss="modal">
+					<span><i class="fas fa-times fa-xs"></i></span>
+				</button>
+			</div>
+			<div id="history-items" class="modal-body"></div>
+			<div class="modal-footer">
+				<button id="download-history-btn" class="btn no-color" onclick="downloadColors('history');">
+					<i class="fas fa-download"></i> Download
+				</button>
+				<button id="upload-history-btn" class="btn no-color" onclick="uploadColors('history');">
+					<i class="fas fa-upload"></i> Upload
+				</button>
+				<button id="clear-history-btn" class="btn no-color" onclick="removeAllColors('history');">
+					<i class="fas fa-eraser"></i> Clear All
+				</button>
+				<input id="history-file-input" type="file" class="hidden">
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- Favorite Modal -->
+<!-- Same as history modal except for favorites -->
+<div class="modal fade" id="favorite-modal" tabindex="-1" role="dialog">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title"><i class="fas fa-heart"></i> Favorites</h5>
+				<button type="button" class="close" data-dismiss="modal">
+					<span><i class="fas fa-times fa-xs"></i></span>
+				</button>
+			</div>
+			<div id="favorite-items" class="modal-body">
+				
+			</div>
+			<div class="modal-footer">
+				<button id="download-favorite-btn" class="btn no-color" onclick="downloadColors('favorite');"><i class="fas fa-download"></i> Download</button>
+				<button id="upload-favorite-btn" class="btn no-color" onclick="uploadColors('favorite');"><i class="fas fa-upload"></i> Upload</button>
+				<button id="clear-favorite-btn" class="btn no-color" onclick="removeAllColors('favorite');"><i class="fas fa-eraser"></i> Clear All</button>
+				<input id="favorite-file-input" type="file" class="hidden">
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="help-modal" tabindex="-1" role="dialog">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title"><i class="fas fa-question"></i> Help</h5>
+				<button type="button" class="close" data-dismiss="modal">
+					<span><i class="fas fa-times fa-xs"></i></span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<p><b>Color Convert is a simple color converter and color picker.</b></p>
+				<p>Type your color the moment the page loads, in any color mode or by color name.</p>
+				<p>Or move your mouse around the graphical color picker to find the color you want.</p>
+				<p>Feel free to type any one of the 140 <a href="https://www.w3schools.com/tags/ref_colornames.asp" target="_blank">color names</a> supported by all browsers.</p>
+				<img src="img/screenshot-gui-picker.png" width="300px">	
+				<hr>
+				<p><b>You can convert between four color modes: RGB, CMYK, HSL, and HSV.</b></p>
+				<p>Each color mode features sliders and numerical inputs for each attribute, and a text input with all attributes.</p>
+				<p>Updating one input will automatically convert and update the other inputs.</p>
+				<p>There are quick copy buttons next to the inputs for your convenience, great for web developers.</p>
+				<img src="img/screenshot-rgb-mode.png" width="350px">
+				<hr>
+				<p><b>Check out the three buttons at the top of the page.</b></p>
+				<p>Click the link button to generate a link to your color, and copy the link to your clipboard</p>
+				<p>Click the reset button to reset the color to black and remove the link</p>
+				<p>Click the random button for a random color</p>
+				<img src="img/screenshot-top-buttons.png" width="300px">
+				<hr>
+				<p>Read more about this webpage (and its code) on <a href="https://github.com/rgbstudios/color-convert" target="_blank">GitHub</a> or check out the <a href="https://github.com/rgbstudios/color-convert/blob/master/README.md" target="_blank">README</a></p>
+			</div>
+			<div class="modal-footer">
+				<button class="btn no-color" onclick="window.open('https://www.paypal.me/RGBStudios', '_blank');"><i class="fas fa-donate"></i> Donate</button>
+				<button class="btn no-color" onclick="window.open('mailto:contact@rgbstudios.org', '_blank');"><i class="fas fa-envelope"></i> Contact</button>
+				&nbsp;&nbsp;
+				<p>Made by <a href="https://justingolden.me" target="_blank">Justin Golden</a> for <a href="https://rgbstudios.org" target="_blank">RGB Studios</a></p>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="settings-modal" tabindex="-1" role="dialog">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title"><i class="fas fa-cog"></i> Settings</h5>
+				<button type="button" class="close" data-dismiss="modal">
+					<span><i class="fas fa-times fa-xs"></i></span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<p>Hex Input:</p>
+
+				<!-- TODO: unimplemented -->
+				
+				<div class="custom-control custom-checkbox">
+					<input checked type="checkbox" class="custom-control-input" id="use-pound-checkbox">
+					<label class="custom-control-label" for="use-pound-checkbox">Use "#" sign</label>
+				</div>
+
+				<div class="custom-control custom-checkbox">
+					<input checked type="checkbox" class="custom-control-input" id="use-caps-checkbox">
+					<label class="custom-control-label" for="use-caps-checkbox">Use capital letters</label>
+				</div>
+
+			</div>
+			<div class="modal-footer">
+				<button class="btn no-color" onclick="toggleFullscreen();"><i class="fas fa-compress"></i> Fullscreen</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="color-modes-modal" tabindex="-1" role="dialog">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title"><i class="fas fa-info"></i> Color Modes</h5>
+				<button type="button" class="close" data-dismiss="modal">
+					<span><i class="fas fa-times fa-xs"></i></span>
+				</button>
+			</div>
+			<div class="modal-body">
+				
+
+				<ul class="nav nav-tabs" id="color-modes-tabs" role="tablist">
+					<li class="nav-item">
+						<a class="nav-link active" id="rgb-tab" data-toggle="tab" href="#rgb" role="tab" aria-controls="rgb" aria-selected="true">RGB</a>
+					</li>
+					<li id="thing" class="nav-item">
+						<a class="nav-link" id="cmyk-tab" data-toggle="tab" href="#cmyk" role="tab" aria-controls="cmyk" aria-selected="false">CMYK</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="hsl-tab" data-toggle="tab" href="#hsl" role="tab" aria-controls="hsl" aria-selected="false">HSL</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" id="hsv-tab" data-toggle="tab" href="#hsv" role="tab" aria-controls="hsv" aria-selected="false">HSV</a>
+					</li>
+				</ul>
+				<div class="tab-content">
+					<div class="tab-pane fade show active" id="rgb" role="tabpanel" aria-labelledby="rgb-tab">
+						<br>
+
+						<div class="row">
+							<div class="col-sm-4">
+								<img src="https://upload.wikimedia.org/wikipedia/commons/8/86/RGB_color_model.svg" width="100px">
+								<p><small>Image from Wikipedia</small></p>
+							</div>
+							<div class="col-sm-8">
+								<p><b>RGB</b> stands for <b>R</b>ed <b>G</b>reen <b>B</b>lue.</p>
+								<p>Red, green, and blue are the additive primary colors. When light of those three colors are added together, it produces a wide array of colors.</p>
+							</div>
+						</div>
+						
+						<b>Uses</b>
+						<p>RGB is the color mode used on screens, such as phones, computers, TVs, and other electronic devices.</p>
+						<p>RGB images are typically created by digital cameras or scanners, as well as graphics designed for the web, computer applications, or other uses on a screen.</p>
+
+						<b>Numbers</b>
+						<p>Each pixel on a screen has a red, green, and blue value ranging from 0-255 (256 possible values per color). Each pixel uses three bytes of memory (a byte is 8 bits, enough to store 2^8=256 different values), one byte per each amount of red, green, and blue.</p>
+						
+						<div class="row">
+							<div class="col-sm-8">
+								<p>rgb(0,0,0) is the lack of light: black, and rgb(255,255,255) is the maximum amount of light: white. Colors with the same red, green, and blue values are shades of grey.</p>
+								<p>To go through all of the hues in the rainbow, start with 255 red and 0 green and blue, then add green until you reach 255. Then subtract red until you reach 0. Then add blue until you reach 255. Then subtract green until you reach 0. Then add red until you reach 255. Lastly, subtract blue until you reach 0. This can be seen on the adjacent diagram.</p>
+							</div>
+							<div class="col-sm-4">
+								<img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/RGB_color_wheel_10.svg" width="200px">
+								<p><small>Image from Wikipedia</small></p>
+							</div>
+						</div>
+
+						<p>There are 16.78 million different colors that can be created this way, and each pixel on your screen is one of those colors, described by three bytes. 16.78 million is 256*256*256.</p>
+						
+						<b>Alpha</b>
+						<p>Sometimes people use RGBA, which stands for Red Green Blue Alpha, where alpha is the transparency of the pixel, between 0 and 1 (for example, 0.5 is "half" opacity). This is used for displaying one color "on top" of another.</p>
+						
+						<b>Hex</b>
+						<p>Hexadecimal, or "Hex" for short, is an abbreviated way of storing RGB colors. Each red, green, or blue value (0-255) can be stored in two hexadecimal (base 16) digits (0,1,2,3,4,5,6,7,8,9,A,B,C,D,E,F). The pound sign "#" is often included in the front to let us know it's in hexadecimal. Red, green, and blue each have two digits, so each color is six hexadecimal digits.</p>
+						<p>Sometimes, hexadecimal is abbreviated in only three digits, such as "#369". These are the most significant digits of red, green, and blue, and we assume the next digit is the same, so "#369" would be "#336699".</p>
+						<p>Hex can also be written in eight digits, where the last two digits are used as alpha, between 0 and 255. This can also be abbreviated as four digits.</p>
+						<!-- <p>This website currently doesn't support transparency/alpha.</p> -->
+
+						<b>Up Close</b>
+						<br>
+						<img src="https://upload.wikimedia.org/wikipedia/commons/3/34/RGB_pixels.jpg" width="300px">
+						<p><small>Image from Wikipedia</small></p>
+						<p>Orange and blue pixels on an LCD TV seen up close. Each pixel has a certain amount of red, green, and blue light.</p>
+
+					</div>
+					<div class="tab-pane fade" id="cmyk" role="tabpanel" aria-labelledby="cmyk-tab">
+						
+						<br>
+
+						<div class="row">
+							<div class="col-sm-4">
+								<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/CMY_ideal_version.svg/1200px-CMY_ideal_version.svg.png" width="100px">
+								<p><small>Image from Wikipedia</small></p>
+							</div>
+							<div class="col-sm-8">
+								<p><b>CMYK</b> stands for <b>C</b>yan <b>M</b>agenta <b>Y</b>ellow <b>K</b>ey.</p>
+								<p>Cyan, Magenta, and Yellow (blue, red, and yellow) are the subtractive primary colors used in printing. When ink of those three colors are mixed, it produces a wide array of colors.</p>
+								<p>Key refers to black ink used in printing, which can often substitute an equal combination of the other three colors.</p>
+							</div>
+						</div>
+						
+						<b>Uses</b>
+						<p>CMYK is the color mode used for printing, such as flyers, cards, posters, clothing, and more.</p>
+						<p>CMYK images are typically created by graphics designed print.</p>
+
+						<b>Numbers</b>
+						<div class="row">
+							<div class="col-sm-8">
+								<p>Cyan, magenta, yellow, and key values range from 0-100, representing the percentage of that color used.</p>
+								<p>cmyk(0,0,0,0) is the lack of color: white, and cmyk(0%,0%,0%,100%) is black. Colors with 0% cyan, magenta, and yellow are shades of grey.</p>
+							</div>
+							<div class="col-sm-4">
+								<img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/CMYK_color_swatches.svg" width="150px">
+								<p><small>Image from Wikipedia</small></p>
+							</div>
+						</div>
+
+						<p>There are 100 million different colors that can be created this way. 100 million is 100*100*100*100.</p>
+
+						<b>CMY</b>
+						<p>CMY is sometimes used instead of CMYK, omitting "key" (black).</p>
+
+						<b>Halftoning</b>
+						<p>Through halftoning, printers combine dots of cyan, magenta, yellow, and key, printed in a pattern small enough that humans percieve them as one solid color.</p>
+						<img src="https://upload.wikimedia.org/wikipedia/commons/e/ef/Halftoningcolor.svg" width="300px">
+						<p><small>Images from Wikipedia</small></p>
+
+						<b>Up Close</b>
+						<br>
+						<img src="https://upload.wikimedia.org/wikipedia/commons/c/c5/CMYK_closeup.jpg" width="300px">
+						<img src="https://upload.wikimedia.org/wikipedia/commons/0/01/CMYK_under_a_microscope.jpg" width="300px">
+						<p><small>Images from Wikipedia</small></p>
+						<p>Cerulean printed with CMYK, can be seen up close as a combination of cyan, magenta, yellow, and key.</p>
+
+					</div>
+					<div class="tab-pane fade" id="hsl" role="tabpanel" aria-labelledby="hsl-tab">
+						
+					</div>
+					<div class="tab-pane fade" id="hsv" role="tabpanel" aria-labelledby="hsv-tab">
+						
+					</div>
+				</div>
+
+
+
+
+			</div>
+<!-- 			<div class="modal-footer">
+			</div> -->
+		</div>
+	</div>
+</div>
+
 </body>
 </html>

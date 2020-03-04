@@ -52,7 +52,7 @@ Using [Slick](http://kenwheeler.github.io/slick/), [tinyColorPicker](https://git
 
 <hr>
 
-**by [Justin Golden](https://justingolden21.github.io) for [RGB Studios](https://rgbstudios.org)**
+**by [Justin Golden](https://justingolden.me) for [RGB Studios](https://rgbstudios.org)**
 
 *RGB Studios Homepage: https://rgbstudios.org*
 

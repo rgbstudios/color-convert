@@ -1,0 +1,36 @@
+.color-item {
+	padding: 20px;
+	margin: 5px;
+	width: 100%;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	background-color: #fff;
+	/*cursor: move;*/
+}
+.color-preview {
+	width: 25px;
+	height: 25px;
+	display: inline-block;
+}
+
+.color-preview, .color-item .btn, .color-item span, .color-item input {
+	margin-right: 15px;
+}
+.color-item input:hover {
+	/* account for border increase */
+	margin-right: 16px;
+}
+
+.color-item .color-name {
+	width: 40%;
+	display: inline;
+}
+
+@media (max-width: 992px) { /* md */
+	.color-item .color-name {
+		width: 80%;
+	}
+	.color-preview {
+		margin-top: 5px;
+	}
+}

@@ -1,19 +1,58 @@
 <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 72 72">
-<g stroke-width="3" stroke-linejoin="round">
+<g stroke-width="2" stroke-linejoin="round">
 <polygon fill="" points="48,32 24,56 16,56 16,48 32,32">
 	<animate attributeName="fill" values="hsl(0,50%,40%);hsl(120,50%,40%);hsl(240,50%,40%);hsl(360,50%,40%)" dur="6s" repeatCount="indefinite"/>
 </polygon>
 <path fill="#000" stroke="#000" d="M48,16c0,0,0-4,4-4s8,4,8,8s-4,4-4,4"/>
 <circle fill="#000" stroke="#000" cx="60" cy="12" r="8"/>
 <polygon fill="none" stroke="#000" points="32,32 16,48 16,56 24,56 48,32 56,24 48,16"/>
-<path id="motionPath" fill="none" d="M0,0,v48"/>
-<path id="drop" fill="" stroke="#000" d="M14.9,67.2c-1.1,0-2.2-0.6-3.2-1.9c-0.8-1-1.1-1.9-0.9-3c0.4-2.5,3.2-4.6,4.3-5.4c2.4,1.6,3.8,3.3,4.1,5.1
-	c0.3,1.9-0.8,3.3-0.8,3.3C18.4,65.3,16.8,67.2,14.9,67.2L14.9,67.2z">
-	<animate attributeName="fill" values="hsl(0,100%,40%);hsl(120,100%,40%);hsl(240,100%,40%);hsl(360,100%,40%)" dur="6s" repeatCount="indefinite"/>	
+<g transform="translate(14.9 67.2)">
+<path id="drop" fill="" stroke="#000" d="M0,0c-1.1,0-2.2-0.6-3.2-1.9c-0.8-1-1.1-1.9-0.9-3c0.4-2.5,3.2-4.6,4.3-5.4c2.4,1.6,3.8,3.3,4.1,5.1
+	c0.3,1.9-0.8,3.3-0.8,3.3C3.5,-1.9,1.9,0,0,0L0,0z">
+	
+	<animate
+		attributeName="fill"
+		values="hsl(0,50%,40%);hsl(120,50%,40%);hsl(240,50%,40%);hsl(360,50%,40%)"
+		dur="6s"
+		repeatCount="indefinite"/>
+
+	<!-- SVG transform notes
+	(in order to keep path at 0,0)
+
+	old:
+	M14.9,67.2
+	C18.4,65.3,16.8,67.2,14.9,67.2L14.9,67.2z
+	new:
+	translate(14.9 67.2)
+	M0,0
+	C3.5,-1.9,1.9,0,0,0L0,0z
+
+	- - - - - - - -
+
+	Animation notes
+
+	Grow for 2s, then fall for 4s
+	Needed to have drop path start at 0,0 and then translate with group so that scale animation scales relative to right location
+	8.5 is height of the drop object, 72 is the amount it drops
+	Need to put -8.5 in there to go against scale transformation, otherwise it scales from center not from top
+	-->
+
+	<animateTransform
+		attributeName="transform"
+		type="translate"
+		dur="6s" 
+		values="0,-8.5 ; 0,0 ; 0,36 ; 0,72" 
+		repeatCount="indefinite"/>
+
+	<animateTransform
+		attributeName="transform"
+		additive="sum"
+		type="scale"
+		dur="6s"
+		values="0; 1; 1; 1"
+		repeatCount="indefinite"/>
 </path>
-<animateMotion
-	xlink:href="#drop"
-	dur="2s" repeatCount="indefinite">
-	<mpath xlink:href="#motionPath"/>
-</animateMotion>
-</g></svg>
+</g>
+
+</g>
+</svg>

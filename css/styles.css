@@ -1,5 +1,3 @@
-/*todo: color the sliders with their repective colors?*/
-/*change styling on focused input?*/
 * {
 	font-family: 'Cabin', sans-serif;
 }
@@ -11,6 +9,11 @@ img, button, br {
 	-moz-user-select: none; /* Firefox */
 	-ms-user-select: none; /* IE10+/Edge */
 	user-select: none; /* Standard */
+}
+img {
+	-webkit-user-drag: none;
+	user-drag: none;
+	-webkit-touch-callout: none;
 }
 ::-moz-selection {
 	background: hsl(0, 0%, 90%) !important;
@@ -32,6 +35,8 @@ hr {
 }
 
 .toast {
+	/* TODO why z-idx no work :( */
+	z-index: 9999 !important; /* bs modal is 1050 */
 	box-shadow: none;
 }
 .toast-header {
@@ -51,7 +56,8 @@ input {
 }
 
 button {
-	margin-right: 5px;
+	margin-right: 3px;
+	/*margin-right: 5px;*/
 	border: 1px solid;
 	background-color: #fff; /* changes with color */
 	color: #000; /* changes with color */
@@ -59,9 +65,30 @@ button {
 button.dark {
 	background-color: #000;
 }
-button:hover:not(.close), button:hover:focus:not(.close) {
+button:hover:not(.close):not(.slick-arrow), button:hover:focus:not(.close):not(.slick-arrow) {
 	box-shadow: 4px 4px 0px #000;
 }
+<<<<<<< Updated upstream:styles.css
+=======
+
+input[type=text]:hover, input[type=number]:hover {
+	border: 2px solid #ccc;
+	
+	/* account for border increase */
+	margin: -1px;
+	margin-top: 0px;
+}
+#color-detect-input:hover {
+	/* account for border increase */
+	margin: 0px !important;
+}
+
+.info-btn {
+	position: absolute;
+	left: 30px;
+	top: 30px;
+}
+>>>>>>> Stashed changes:css/styles.css
 .close {
 	border: 1px solid #ccc !important;
 }
@@ -80,12 +107,54 @@ button:hover:not(.close), button:hover:focus:not(.close) {
 #logo-animated {
 	width: 64px;
 }
+#rgb-logo {
+	width: 32px;
+}
 
+<<<<<<< Updated upstream:styles.css
+=======
+.popover-header {
+	background-color: #fff;
+	border-color: #ccc;
+	border-radius: 5px;
+	font-weight: normal;
+	border-bottom: 1px;
+}
+.popover-body {
+	display: none;
+}
+.mobile-only {
+	display: none;
+}
+.hidden {
+	display: none;
+}
+
+.modal-backdrop {
+	/* fix display on mobile */
+	width: 100%;
+	height: 100%;
+}
+
+.dropdown-item:hover {
+	color: #fff;
+	background-color: #000;
+}
+
+>>>>>>> Stashed changes:css/styles.css
 @media (max-width: 992px) { /* md */
+/*	#logo-animated {
+		width: 64px;
+	}*/
 	.toast {
 		position: absolute;
 		bottom: 5px;
 		margin-bottom: 15px !important;
 	}
-
+	.mobile-only {
+		display: initial;
+	}
+	.modal-content {
+		width: 95%;
+	}
 }

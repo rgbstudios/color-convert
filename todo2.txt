@@ -1,0 +1,21 @@
+TODO
+organize js and css files
+
+look into colors being slightly different and getting adjusted by setColor()
+
+test history/favorites more
+
+look into bugs with color picker not updating (text color and inputs, callback func)
+
+
+
+work on info about color modes next (or convert to angular)
+
+----------------
+
+add cookies checkbox to history/favorite modal, can save/load cookies or remove them (use jscookie)
+edge/ie copy buttons in history/favorites don't work. hide them with js?
+make sure PWA remembers previous color and restores it on load
+custom css scrollbar?
+speak color? with delay?
+night mode?
