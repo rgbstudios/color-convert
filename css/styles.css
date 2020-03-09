@@ -65,9 +65,13 @@ button {
 button.dark {
 	background-color: #000;
 }
-button:hover:not(.close):not(.slick-arrow):not(.slick-active button), 
-button:hover:focus:not(.close):not(.slick-arrow):not(.slick-active button) {
+button:hover:not(.close):not(.slick-arrow), 
+button:hover:focus:not(.close):not(.slick-arrow) {
 	box-shadow: 4px 4px 0px #000;
+}
+
+li[role=presentation] button {
+	box-shadow: none !important;
 }
 
 input[type=text]:hover, input[type=number]:hover {
