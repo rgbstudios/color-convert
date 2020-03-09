@@ -154,7 +154,7 @@ input[type=text]:hover, input[type=number]:hover {
 	.mobile-only {
 		display: initial;
 	}
-	.modal-content {
-		width: 95%;
+	.modal-dialog {
+		max-width: 90%;
 	}
 }
