@@ -12,6 +12,7 @@ work on info about color modes next (or convert to angular)
 ----------------
 
 add cookies checkbox to history/favorite modal, can save/load cookies or remove them (use jscookie)
+add cookies checkbox for settings to remember settings or reset them?
 edge/ie copy buttons in history/favorites don't work. hide them with js?
 make sure PWA remembers previous color and restores it on load
 custom css scrollbar?
@@ -19,3 +20,5 @@ speak color? with delay?
 night mode?
 show number of history/favorites? undo clear/remove?
 show all web colors in modal, like favs/history where you can open and share them (just not delete)
+color mixer?
+display color formulas?

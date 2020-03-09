@@ -425,14 +425,10 @@ function RGBtoHex(r, g, b) {
 
 	let rtn = '';
 	if(hexSettings.usePound) rtn += '#';
-	if(hexSettings.useCaps) {
-		rtn += (r + g + b).toUpperCase();
-	}
-	else {
-		rtn += (r + g + b).toLowerCase();
-	}
-
-	return rtn;
+	if(hexSettings.useCaps)
+		return rtn + (r + g + b).toUpperCase();
+	else
+		return rtn + (r + g + b).toLowerCase();
 }
 
 // todo: unimplemented
