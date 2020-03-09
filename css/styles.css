@@ -1,3 +1,4 @@
+/* generic styles */
 * {
 	font-family: 'Cabin', sans-serif;
 }
@@ -22,8 +23,17 @@ img {
 	background: hsl(0, 0%, 90%) !important;
 }
 
+input {
+	text-align: center;
+}
 body, button, .toast-header {
 	color: #333;
+}
+a {
+	color: #999;
+}
+a:hover {
+	color: #666;
 }
 hr, input, .inner-div, button, .toast {
 	border: 1px solid;
@@ -34,6 +44,17 @@ hr {
 	border-bottom: 0;
 }
 
+/* layout */
+.col-lg-6 { /* color cols */
+	padding: 10px;
+	border: 0 !important;
+}
+.inner-div {
+	padding: 20px !important;
+	margin: 10px !important;
+}
+
+/* range */
 input[type=range] {
 	border: none;
 	margin-bottom: 5px;
@@ -48,30 +69,18 @@ input[type=range] {
 	background: #333;
 }
 
+/* toast */
 .toast {
-	/* TODO why z-idx no work :( */
-	z-index: 9999 !important; /* bs modal is 1050 */
+	z-index: 1051 !important; /* bs modal is 1050 */
 	box-shadow: none;
 }
 .toast-header {
 	border-color: #ccc;
 }
 
-input {
-	text-align: center;
-}
-.col-lg-6 {
-	padding: 10px;
-	border: 0 !important;
-}
-.inner-div {
-	padding: 20px !important;
-	margin: 10px !important;
-}
-
+/* button */
 button {
 	margin-right: 3px;
-	/*margin-right: 5px;*/
 	border: 1px solid;
 	background-color: #fff; /* changes with color */
 	color: #000; /* changes with color */
@@ -83,14 +92,14 @@ button:hover:not(.close):not(.slick-arrow),
 button:hover:focus:not(.close):not(.slick-arrow) {
 	box-shadow: 4px 4px 0px #000;
 }
-
 li[role=presentation] button {
 	box-shadow: none !important;
 }
 
+/* input */
 input[type=text]:hover, input[type=number]:hover {
 	border: 2px solid #ccc;
-	
+
 	/* account for border increase */
 	margin: -1px;
 	margin-top: 0px;
@@ -100,51 +109,30 @@ input[type=text]:hover, input[type=number]:hover {
 	margin: 0px !important;
 }
 
+/* misc */
 .info-btn {
 	position: absolute;
 	left: 30px;
 	top: 30px;
 }
-
 .close {
 	border: 1px solid #ccc !important;
 }
-
 #title-header {
 	border-radius: 10px;
 	padding: 10px;
 	display: inline !important;
 	font-weight: normal;
 }
-
 .slick-arrow:before { 
 	color: #333 !important;
 }
-
 #logo-animated {
 	width: 64px;
 }
 #rgb-logo {
 	width: 32px;
 }
-
-.popover-header {
-	background-color: #fff;
-	border-color: #ccc;
-	border-radius: 5px;
-	font-weight: normal;
-	border-bottom: 1px;
-}
-.popover-body {
-	display: none;
-}
-.mobile-only {
-	display: none;
-}
-.hidden {
-	display: none;
-}
-
 .modal-backdrop {
 	/* fix display on mobile */
 	width: 100%;
@@ -156,10 +144,27 @@ input[type=text]:hover, input[type=number]:hover {
 	background-color: #000;
 }
 
+/* popover */
+.popover-header {
+	background-color: #fff;
+	border-color: #ccc;
+	border-radius: 5px;
+	font-weight: normal;
+	border-bottom: 1px;
+}
+.popover-body {
+	display: none;
+}
+
+/* utility classes */
+.mobile-only {
+	display: none;
+}
+.hidden {
+	display: none;
+}
+
 @media (max-width: 992px) { /* md */
-/*	#logo-animated {
-		width: 64px;
-	}*/
 	.toast {
 		position: absolute;
 		bottom: 5px;

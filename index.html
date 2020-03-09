@@ -45,7 +45,8 @@
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 <!-- jQuery Color Picker and W3 Color Library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tinyColorPicker/1.1.1/jqColorPicker.min.js"></script>
-<script src="https://www.w3schools.com/lib/w3color.js"></script>
+<script src="js/w3color.js"></script>
+<!-- <script src="https://www.w3schools.com/lib/w3color.js"></script> -->
 <!-- Font -->
 <link href="https://fonts.googleapis.com/css?family=Cabin" rel="stylesheet">
 
@@ -54,6 +55,8 @@
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/color-item.css">
 <script src="js/scripts.js"></script>
+<script src="js/util.js"></script>
+<script src="js/slick-scripts.js"></script>
 <script src="js/color-item.js"></script>
 
 <script>
@@ -321,7 +324,7 @@ if('serviceWorker' in navigator) {
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title"><i class="fas fa-history"></i> History</h5>
-				<button type="button" class="close" data-dismiss="modal">
+				<button type="button" class="close" aria-label="Close" data-dismiss="modal">
 					<span><i class="fas fa-times fa-xs"></i></span>
 				</button>
 			</div>
@@ -349,7 +352,7 @@ if('serviceWorker' in navigator) {
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title"><i class="fas fa-heart"></i> Favorites</h5>
-				<button type="button" class="close" data-dismiss="modal">
+				<button type="button" class="close" aria-label="Close" data-dismiss="modal">
 					<span><i class="fas fa-times fa-xs"></i></span>
 				</button>
 			</div>
@@ -371,7 +374,7 @@ if('serviceWorker' in navigator) {
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title"><i class="fas fa-question"></i> Help</h5>
-				<button type="button" class="close" data-dismiss="modal">
+				<button type="button" class="close" aria-label="Close" data-dismiss="modal">
 					<span><i class="fas fa-times fa-xs"></i></span>
 				</button>
 			</div>
@@ -395,6 +398,7 @@ if('serviceWorker' in navigator) {
 				<img src="img/screenshot-top-buttons.png" width="300px">
 				<hr>
 				<p>Read more about this webpage (and its code) on <a href="https://github.com/rgbstudios/color-convert" target="_blank">GitHub</a> or check out the <a href="https://github.com/rgbstudios/color-convert/blob/master/README.md" target="_blank">README</a></p>
+				<p>Read about colors on <a href="https://www.w3schools.com/colors/default.asp" target="_blank">W3Schools</a></p>
 			</div>
 			<div class="modal-footer">
 				<button class="btn no-color" onclick="window.open('https://www.paypal.me/RGBStudios', '_blank');"><i class="fas fa-donate"></i> Donate</button>
@@ -411,7 +415,7 @@ if('serviceWorker' in navigator) {
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title"><i class="fas fa-cog"></i> Settings</h5>
-				<button type="button" class="close" data-dismiss="modal">
+				<button type="button" class="close" aria-label="Close" data-dismiss="modal">
 					<span><i class="fas fa-times fa-xs"></i></span>
 				</button>
 			</div>
@@ -443,7 +447,7 @@ if('serviceWorker' in navigator) {
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title"><i class="fas fa-info"></i> Color Modes</h5>
-				<button type="button" class="close" data-dismiss="modal">
+				<button type="button" class="close" aria-label="Close" data-dismiss="modal">
 					<span><i class="fas fa-times fa-xs"></i></span>
 				</button>
 			</div>

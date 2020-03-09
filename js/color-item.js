@@ -21,7 +21,7 @@ function addColorItem(mode, hex, name='') {
 		if(hex == prevAddedFavorite) return false; // ignore if same as previous color (duplicate)
 		prevAddedFavorite = hex;
 		$('#favorite-btn').html('<i class="fas fa-heart"></i>'); // add favorite therefore filled heart
-		makeToast('<i class="fas fa-check"></i> Favorite Added','<b>Added color to favorites list</b><br>'
+		makeToast('<i class="fas fa-check"></i> Favorite Added &nbsp;','<b>Added color to favorites list</b><br>'
 			+ '<i class="fas fa-heart" style="color:' + hex + ';"></i> ' + hex);
 	}
 
@@ -114,14 +114,14 @@ $( ()=> {
 
 function getFile(mode) {
 	if(!window.FileReader) return; // browser not supported
-	
+
 	let input = $('#' + mode + '-file-input').get(0);
 	let reader = new FileReader();
 	if(input.files.length) { // file exists
 		let textFile = input.files[0];
 		reader.readAsText(textFile);
 		$(reader).on('load', (evt)=> processFile(evt, mode) );
-	}	
+	}
 }
 
 function processFile(evt, mode) {

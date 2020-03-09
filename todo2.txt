@@ -18,3 +18,4 @@ custom css scrollbar?
 speak color? with delay?
 night mode?
 show number of history/favorites? undo clear/remove?
+show all web colors in modal, like favs/history where you can open and share them (just not delete)
