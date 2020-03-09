@@ -7,8 +7,6 @@ test history/favorites more
 
 look into bugs with color picker not updating (text color and inputs, callback func)
 
-finish color mode write ups
-
 work on info about color modes next (or convert to angular)
 
 ----------------
@@ -19,3 +17,4 @@ make sure PWA remembers previous color and restores it on load
 custom css scrollbar?
 speak color? with delay?
 night mode?
+show number of history/favorites? undo clear/remove?

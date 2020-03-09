@@ -80,7 +80,7 @@ function removeColor(elm) {
 	$(elm.parentElement).fadeOut(500, ()=> $(elm.parentElement).remove() );
 }
 
-function removeAllColors(mode) { //todo
+function removeAllColors(mode) {
 	$('.' + mode + '-item').each(
 		(idx, elm)=> $(elm).fadeOut(500, ()=> $(elm).remove() )
 	);

@@ -366,7 +366,7 @@ function setColor(str, updateColorPicker=true) { //using w3 library
 	let hex = $('#hex-input').val();
 	
 	$('.btn:not(.no-color)').css('color', hex);
-	if(hsl.l>50) {
+	if(!c.isDark() ) {
 		$('.btn:not(.no-color)').addClass('dark');
 	}
 	else {
