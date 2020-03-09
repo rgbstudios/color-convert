@@ -7,7 +7,7 @@ test history/favorites more
 
 look into bugs with color picker not updating (text color and inputs, callback func)
 
-
+finish color mode write ups
 
 work on info about color modes next (or convert to angular)
 
