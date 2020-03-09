@@ -273,7 +273,7 @@ if('serviceWorker' in navigator) {
 		<div class="inner-div">
 		<h3>HSV / HSB</h3>
 
-		<span data-toggle="modal" data-target="#color-modes-modal"><button onclick="$('#color-modes-tabs a[href=\'#hsv\']').tab('show');" class="btn info-btn" title="About HSV" data-toggle="popover">
+		<span data-toggle="modal" data-target="#color-modes-modal"><button onclick="$('#color-modes-tabs a[href=\'#hsl\']').tab('show');" class="btn info-btn" title="About HSV" data-toggle="popover">
 			<i class="fas fa-info"></i>
 		</button></span>
 
@@ -462,29 +462,29 @@ if('serviceWorker' in navigator) {
 						<a class="nav-link" id="cmyk-tab" data-toggle="tab" href="#cmyk" role="tab" aria-controls="cmyk" aria-selected="false">CMYK</a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link" id="hsl-tab" data-toggle="tab" href="#hsl" role="tab" aria-controls="hsl" aria-selected="false">HSL</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" id="hsv-tab" data-toggle="tab" href="#hsv" role="tab" aria-controls="hsv" aria-selected="false">HSV</a>
+						<a class="nav-link" id="hsl-tab" data-toggle="tab" href="#hsl" role="tab" aria-controls="hsl" aria-selected="false">HSL and HSB / HSV</a>
 					</li>
 				</ul>
 				<div class="tab-content">
 					<div class="tab-pane fade show active" id="rgb" role="tabpanel" aria-labelledby="rgb-tab">
+
 						<br>
 
 						<div class="row">
 							<div class="col-sm-4">
-								<img src="https://upload.wikimedia.org/wikipedia/commons/8/86/RGB_color_model.svg" width="100px">
+								<img src="https://upload.wikimedia.org/wikipedia/commons/8/86/RGB_color_model.svg" width="150px">
 								<p><small>Image from Wikipedia</small></p>
 							</div>
 							<div class="col-sm-8">
 								<p><b>RGB</b> stands for <b>R</b>ed <b>G</b>reen <b>B</b>lue.</p>
-								<p>Red, green, and blue are the additive primary colors. When light of those three colors are added together, it produces a wide array of colors.</p>
+								<p>Red, green, and blue are the additive primary colors. Colors are created by adding red, green, and blue light together.</p>
+
+								<p>Red, green, and blue define the intensity of the light of that color, on a scale between 0 and 255.</p>
 							</div>
 						</div>
 						
 						<b>Uses</b>
-						<p>RGB is the color mode used on screens, such as phones, computers, TVs, and other electronic devices.</p>
+						<p>RGB is the color mode used on screens, such as phones, computers, TVs, and other electronics.</p>
 						<p>RGB images are typically created by digital cameras or scanners, as well as graphics designed for the web, computer applications, or other uses on a screen.</p>
 
 						<b>Numbers</b>
@@ -492,7 +492,7 @@ if('serviceWorker' in navigator) {
 						
 						<div class="row">
 							<div class="col-sm-8">
-								<p>rgb(0,0,0) is the lack of light: black, and rgb(255,255,255) is the maximum amount of light: white. Colors with the same red, green, and blue values are shades of grey.</p>
+								<p>rgb(0,0,0) is the lack of light: black, and rgb(255,255,255) is the maximum amount of light: white. Colors with the same red, green, and blue values are shades of grey. rgb(255,0,0) is red because red is set to the maximum value, and green and blue are 0.</p>
 								<p>To go through all of the hues in the rainbow, start with 255 red and 0 green and blue, then add green until you reach 255. Then subtract red until you reach 0. Then add blue until you reach 255. Then subtract green until you reach 0. Then add red until you reach 255. Lastly, subtract blue until you reach 0. This can be seen on the adjacent diagram.</p>
 							</div>
 							<div class="col-sm-4">
@@ -525,12 +525,12 @@ if('serviceWorker' in navigator) {
 
 						<div class="row">
 							<div class="col-sm-4">
-								<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/CMY_ideal_version.svg/1200px-CMY_ideal_version.svg.png" width="100px">
+								<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/CMY_ideal_version.svg/1200px-CMY_ideal_version.svg.png" width="150px">
 								<p><small>Image from Wikipedia</small></p>
 							</div>
 							<div class="col-sm-8">
 								<p><b>CMYK</b> stands for <b>C</b>yan <b>M</b>agenta <b>Y</b>ellow <b>K</b>ey.</p>
-								<p>Cyan, Magenta, and Yellow (blue, red, and yellow) are the subtractive primary colors used in printing. When ink of those three colors are mixed, it produces a wide array of colors.</p>
+								<p>Cyan, Magenta, and Yellow (blue, red, and yellow) are the subtractive primary colors used in printing. Colors are created by mixing cyan, magenta, and yellow ink.</p>
 								<p>Key refers to black ink used in printing, which can often substitute an equal combination of the other three colors.</p>
 							</div>
 						</div>
@@ -538,12 +538,13 @@ if('serviceWorker' in navigator) {
 						<b>Uses</b>
 						<p>CMYK is the color mode used for printing, such as flyers, cards, posters, clothing, and more.</p>
 						<p>CMYK images are typically created by graphics designed print.</p>
+						<p><i>Note: When a CMYK color is displayed on a screen, it will be converted to RGB and may look slightly different than the color that appears when printed.</i></p>
 
 						<b>Numbers</b>
 						<div class="row">
 							<div class="col-sm-8">
 								<p>Cyan, magenta, yellow, and key values range from 0-100, representing the percentage of that color used.</p>
-								<p>cmyk(0,0,0,0) is the lack of color: white, and cmyk(0%,0%,0%,100%) is black. Colors with 0% cyan, magenta, and yellow are shades of grey.</p>
+								<p>cmyk(0%,0%,0%,0%) is the lack of color: white, and cmyk(0%,0%,0%,100%) is black. Colors with 0% cyan, magenta, and yellow are shades of grey.</p>
 							</div>
 							<div class="col-sm-4">
 								<img src="https://upload.wikimedia.org/wikipedia/commons/4/4c/CMYK_color_swatches.svg" width="150px">
@@ -570,10 +571,51 @@ if('serviceWorker' in navigator) {
 
 					</div>
 					<div class="tab-pane fade" id="hsl" role="tabpanel" aria-labelledby="hsl-tab">
+
+						<br>
+						<b>HSL and HSV / HSB</b>
+
+						<div class="row">
+							<div class="col-sm-4">
+								<img src="https://3.bp.blogspot.com/-9vvvg45dX-Y/UjCNW96hbTI/AAAAAAAAAO8/jPUpBJ4fZsM/s1600/hsl-color-model.png" width="200px">
+								<p><small>Image from <a href="http://codeblog.alexeguia.net/hsl-color-representation/" target="_blank">Alex Eguia's Codeblog</a></small></p>
+							</div>
+							<div class="col-sm-8">
+								<p><b>HSL</b> stands for <b>H</b>ue <b>S</b>aturation <b>L</b>ightness.</p>
+								<p><b>HSB</b> stands for <b>H</b>ue <b>S</b>aturation <b>B</b>rightness. It is sometimes abbreviated HSV, where "V" stands for "Value".</p>
+								<p>Hue is a degree (between 0 and 360) on the color wheel. Red is 0, green is 120, and blue is 240.</p>
+								<p><i>Note: Yellow is 60, cyan is 180, and magenta is 300.</i></p>
+								<p>Saturation is a percentage where 0% is a shade of grey and 100% is the fully intense color.</p>
+								<p>Saturation is calculated differently in HSL and HSB / HSV</p>
+								<p>Lightness is a percentage where 0% is black and 100% is white.</p>
+								<p>Brightness, or value, is calculated as twice the lightness of a color. If the lightness is greater than 50, the brightness is 100 and the HSB / HSV saturation decreases.</p>
+							</div>
+						</div>
 						
-					</div>
-					<div class="tab-pane fade" id="hsv" role="tabpanel" aria-labelledby="hsv-tab">
-						
+
+						<b>Uses</b>
+						<div class="row">
+							<div class="col-sm-6">
+								<p>HSL and HSB / HSV are both alternate ways of representing RGB colors. They are designed primarily for use in computer graphics.</p>
+								<p>The adjacent diagram shows HSL and HSB / HSV color pickers in different computer programs.</p>
+								<p>These color systems are often easier for humans to use when designing graphics, or using software that interacts with brightness or color saturation, such as editing photos or computer vision.</p>
+							</div>
+							<div class="col-sm-6">
+								<img src="https://upload.wikimedia.org/wikipedia/en/e/ea/Hsl-hsv-colorpickers.svg" width="250px">
+								<p><small>Image from Wikipedia</small></p>
+							</div>
+						</div>
+
+
+						<b>Numbers</b>
+						<p>Hue ranges from 0-360, and saturation, lightness, and brighness range from 0-100%.</p>
+						<p>hsl(0,0%,0%) / hsv(0, 100%, 0%) is black, hsl(0, 0%, 100%) / hsv(0, 0%, 100%) is white, hsl(0, 100%, 50%) / hsv(0, 100%, 100%) is fully saturated red (red is hue 0).</p>
+
+						<p>There are 3.6 million different colors that can be created this way (360 * 100 * 100).</p>
+
+						<b>HWB</b>
+						<p>Hue Whiteness Brightness is another similar color model, where hue is represented the same, and whiteness is a percentage (0-100) of how white the color is where 0 is the pure color and 100 is pure white, and brightness is a percentage (0-100) of how dark the color is where 0 is the pure color and 100 is pure black. Whiteness and brightness cannot sum to be greater than 100.</p>
+
 					</div>
 				</div>
 

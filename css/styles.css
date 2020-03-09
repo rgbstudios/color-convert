@@ -40,9 +40,6 @@ hr, input, .inner-div, button, .toast {
 	border-color: #ccc !important;
 	border-radius: 5px;
 }
-hr {
-	border-bottom: 0;
-}
 
 /* layout */
 .col-lg-6 { /* color cols */
