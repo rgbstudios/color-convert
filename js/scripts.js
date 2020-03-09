@@ -10,11 +10,8 @@ $(function() {
 	$('#history-items').sortable();
 	$('#favorite-items').sortable();
 
-<<<<<<< Updated upstream:scripts.js
-=======
 	$('[data-toggle="popover"]').popover({trigger:'hover', placement:'bottom'});
 
->>>>>>> Stashed changes:js/scripts.js
 	checkSlick();
 
 	$('#color-picker').colorPicker({opacity:false, dark: '#000', light: '#fff',  margin: -1, animationSpeed: 250, renderCallback: 
@@ -473,8 +470,6 @@ function checkSlick() {
 	}	
 }
 
-<<<<<<< Updated upstream:scripts.js
-=======
 // move these to util scripts file?
 
 function copyText(str) {
@@ -507,7 +502,6 @@ function toggleFullscreen() {
 	}
 }
 
->>>>>>> Stashed changes:js/scripts.js
 /*
 $(window).click(function(e) {
 	// fix for clicking on an input while it's open
