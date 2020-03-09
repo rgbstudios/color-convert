@@ -34,6 +34,20 @@ hr {
 	border-bottom: 0;
 }
 
+input[type=range] {
+	border: none;
+	margin-bottom: 5px;
+}
+.custom-range::-webkit-slider-thumb {
+	background: #333;
+}
+.custom-range::-moz-range-thumb {
+	background: #333;
+}
+.custom-range::-ms-thumb {
+	background: #333;
+}
+
 .toast {
 	/* TODO why z-idx no work :( */
 	z-index: 9999 !important; /* bs modal is 1050 */
