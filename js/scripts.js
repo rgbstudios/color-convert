@@ -14,7 +14,8 @@ $(function() {
 
 	checkSlick();
 
-	$('#color-picker').colorPicker({opacity:false, dark: '#000', light: '#fff',  margin: -1, animationSpeed: 250, renderCallback: 
+	$('#color-picker').colorPicker({opacity:false, dark: '#000', light: '#fff', 
+		margin: -1, animationSpeed: 250, renderCallback: 
 		function(elm, toggled) {
 			$('#hsl-input').val(elm.val() );
 			setColor($('#hsl-input').val(), false);
@@ -34,15 +35,19 @@ $(function() {
 		//don't store '#' in url or it messes it up
 		history.replaceState({}, '', '?q=' + $('#hex-input').val().substr(1) );
 		copyText(window.location.href);
-		makeToast('<i class="fas fa-check"></i> Copied','<b>Link copied successfully</b><br>' + $('#hex-input').val() );
+		let hex = $('#hex-input').val();
+		makeToast('<i class="fas fa-check"></i> Copied','<b>Link copied successfully</b><br>'
+			+ '<div class="color-preview" style="background-color:' + hex + ';"></div>' + hex);
 		$('#link-btn').focus();
 	});
 	$('.btn-copy').click(function() {
+		refreshColor();
 		let input = $(this).parent().parent().children()[0];
 		input.focus();
 		input.setSelectionRange(0, input.value.length);
 		document.execCommand('copy');
-		makeToast('<i class="fas fa-check"></i> Copied','<b>Color copied successfully</b><br>' + input.value);
+		makeToast('<i class="fas fa-check"></i> Copied','<b>Color copied successfully</b><br>'
+			+ '<div class="color-preview" style="background-color:' + $('#hex-input').val() + ';"></div>' + input.value);
 		if(window.innerWidth < 992) { // if mobile then unfocus input for cleaner experience
 			$(this).focus();
 		}

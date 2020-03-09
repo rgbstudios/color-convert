@@ -21,7 +21,8 @@ function addColorItem(mode, hex, name='') {
 		if(hex == prevAddedFavorite) return false; // ignore if same as previous color (duplicate)
 		prevAddedFavorite = hex;
 		$('#favorite-btn').html('<i class="fas fa-heart"></i>'); // add favorite therefore filled heart
-		makeToast('<i class="fas fa-check"></i> Favorite Added','<b>Added color to favorites list</b><br>' + hex);
+		makeToast('<i class="fas fa-check"></i> Favorite Added','<b>Added color to favorites list</b><br>'
+			+ '<i class="fas fa-heart" style="color:' + hex + ';"></i> ' + hex);
 	}
 
 // todo: add move up/down arrow btns for sorting list on mobile
@@ -61,7 +62,8 @@ function copyColor(elm) {
 	let hex = $(elm.parentElement).find('span').html();
 	// using this instead of copyText(hex) because dynamically created buttons won't run execCommand('copy') on click
 	navigator.clipboard.writeText(hex);
-	makeToast('<i class="fas fa-check"></i> Copied','<b>Color copied successfully</b><br>' + hex);
+	makeToast('<i class="fas fa-check"></i> Copied','<b>Color copied successfully</b><br>'
+		+ '<div class="color-preview" style="background-color:' + hex + ';"></div>' + hex);
 }
 
 // make and copy link to color hex to clipboard
@@ -70,7 +72,8 @@ function copyColorLink(elm) {
 	history.replaceState({}, '', '?q=' + hex.substr(1) );
 	// using this instead of copyText(window.location.href) because dynamically created buttons won't run execCommand('copy') on click
 	navigator.clipboard.writeText(window.location.href);
-	makeToast('<i class="fas fa-check"></i> Copied','<b>Link copied successfully</b><br>' + hex);
+	makeToast('<i class="fas fa-check"></i> Copied','<b>Link copied successfully</b><br>'
+		+ '<div class="color-preview" style="background-color:' + hex + ';"></div>' + hex);
 }
 
 function removeColor(elm) {
