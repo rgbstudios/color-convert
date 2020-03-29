@@ -57,6 +57,10 @@ update for ARIA
 
 download color image (png from canvas with color preview in square and color converted to differnt types in text)
 
+add link to info modal:
+for information about color theory and the color wheel, and generating color palettes:
+https://www.canva.com/colors/color-wheel/
+
 --------------------------------
 STUFF TO ADD TO UI
 history & favorites (clickable, downloadable) & removable and organizable, add favorite
