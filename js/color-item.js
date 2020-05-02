@@ -15,7 +15,9 @@ function addColorItem(mode, hex, name='') {
 		if(hex == prevAddedHistory) return false; // ignore if same as previous color (duplicate)
 		prevAddedHistory = hex;
 		$('#favorite-btn').html('<i class="far fa-heart"></i>'); // new color therefore empty heart
+		$('#favorite-btn i').removeClass('heartBeat');
 		// TODO: loop through all favorites in modal and make sure current isn't already one of them, and if it is then fill heart
+		// TODO: upon removing a color, unfill favorite-btn
 	}
 	else { // 'favorite'
 		if(hex == prevAddedFavorite) return false; // ignore if same as previous color (duplicate)
@@ -23,6 +25,7 @@ function addColorItem(mode, hex, name='') {
 		$('#favorite-btn').html('<i class="fas fa-heart"></i>'); // add favorite therefore filled heart
 		makeToast('<i class="fas fa-check"></i> Favorite Added &nbsp;','<b>Added color to favorites list</b><br>'
 			+ '<i class="fas fa-heart" style="color:' + hex + ';"></i> ' + hex);
+		$('#favorite-btn i').addClass('heartBeat');
 	}
 
 // todo: add move up/down arrow btns for sorting list on mobile
