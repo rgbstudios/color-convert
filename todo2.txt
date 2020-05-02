@@ -22,3 +22,4 @@ show number of history/favorites? undo clear/remove?
 show all web colors in modal, like favs/history where you can open and share them (just not delete)
 color mixer?
 display color formulas?
+choose stored color mode (not always in hex) so conversion isn't messed up and numbers can always be increased/decreased
