@@ -23,3 +23,5 @@ show all web colors in modal, like favs/history where you can open and share the
 color mixer?
 display color formulas?
 choose stored color mode (not always in hex) so conversion isn't messed up and numbers can always be increased/decreased
+use strict and modules, document code and clean it
+setting for clear all favorites on upload
