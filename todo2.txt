@@ -9,6 +9,8 @@ look into bugs with color picker not updating (text color and inputs, callback f
 
 work on info about color modes next (or convert to angular)
 
+clean bootstrap toast with built in stacking: https://getbootstrap.com/docs/4.4/components/toasts/
+
 ----------------
 
 add cookies checkbox to history/favorite modal, can save/load cookies or remove them (use jscookie)
