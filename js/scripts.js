@@ -373,8 +373,9 @@ function setColor(str, updateColorPicker=true) { //using w3 library
 
 	$('#color-picker').val(hex);
 	$('#color-picker').css('background-color', hex);
-	if(updateColorPicker)
+	if(updateColorPicker) {
 		$('#color-picker').colorPicker().colorPicker.render();
+	}
 
 	//set url if already set
 	let url = new URL(window.location.href);

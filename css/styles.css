@@ -48,7 +48,7 @@ hr, input, .inner-div, button, .toast {
 }
 .inner-div {
 	padding: 20px !important;
-	margin: 10px !important;
+	/*margin: 10px !important;*/
 }
 
 /* range */
@@ -93,6 +93,62 @@ li[role=presentation] button {
 	box-shadow: none !important;
 }
 
+/* specific buttons */
+.btn:hover i.fa-download, .btn:hover i.fa-upload {
+	-webkit-animation: flip 0.5s;
+	animation: flip 0.5s;
+}
+.btn:hover i.fa-eraser, .btn:hover i.fa-trash {
+	-webkit-animation: wobble 1s;
+	animation: wobble 1s;
+}
+.btn:hover i.fa-info {
+	-webkit-animation: rubberBand 1s;
+	animation: rubberBand 1s;
+}
+
+.btn:hover i.fa-dice-five {
+	-webkit-animation: shakey 0.5s;
+	animation: shakey 0.5s;
+}
+@keyframes shakey {
+	0% {transform: translateX(2px);}
+	50% {transform: translateX(-4px);}
+	100% {transform: translateX(0px);}
+}
+
+.btn:hover i.fa-history {
+	/*-webkit-animation: twist 0.5s;*/
+	animation: twist 0.5s;
+}
+@keyframes twist {
+	0% {transform: rotate(60deg);}
+	50% {transform: rotate(-60deg);}
+	100% {transform: rotate(0deg);}
+}
+
+#view-favorites-btn:hover i {
+	transform: translateY(4px);
+}
+
+.btn i, #picker, #drop, #color-picker {
+	transition: 0.25s ease-in-out;
+}
+
+.btn:hover i.fa-copy {
+	transform: scaleX(-1);
+	/*transform: scale(1.2);*/
+}
+.btn:hover i.fa-sync-alt {
+	transform: rotate(180deg);
+}
+.btn:hover i.fa-link {
+	transform: rotate(135deg);
+}
+.btn:hover i.fa-external-link-alt {
+	transform: translateX(4px) translateY(-4px);
+}
+
 /* input */
 input[type=text]:hover, input[type=number]:hover {
 	border: 2px solid #ccc;
@@ -104,6 +160,12 @@ input[type=text]:hover, input[type=number]:hover {
 #color-detect-input:hover {
 	/* account for border increase */
 	margin: 0px !important;
+}
+
+/* checkbox */
+.custom-control-input:checked~.custom-control-label::before {
+	border-color: #333;
+	background-color: #333;
 }
 
 /* misc */

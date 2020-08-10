@@ -109,9 +109,9 @@ if('serviceWorker' in navigator) {
 		</div>
 		<div class="col-lg-4 col-md-6">
 			<br>
-			<button id="link-btn" class="btn"><i class="fas fa-link"></i> Link</button>
-			<button id="reset-btn" class="btn"><i class="fas fa-sync-alt"></i> Reset</button>
-			<button id="random-btn" class="btn"><i class="fas fa-dice-five"></i> Random</button>
+			<button id="link-btn" class="btn"><i class="fas fa-link"></i> <small>Link</small></button>
+			<button id="reset-btn" class="btn"><i class="fas fa-sync-alt"></i> <small>Reset</small></button>
+			<button id="random-btn" class="btn"><i class="fas fa-dice-five"></i> <small>Random</small></button>
 
 			<!-- TODO -->
 			<button class="btn my-2" data-toggle="dropdown">
@@ -132,7 +132,7 @@ if('serviceWorker' in navigator) {
 		</div>
 	</div>
 	<br>
-	<hr>
+	<hr class="d-lg-none">
 </div>
 
 <div id="color-sections" class="row">
@@ -140,6 +140,7 @@ if('serviceWorker' in navigator) {
 	<div class="col-lg-6 border border-dark rounded">
 		<div class="inner-div">
 
+		<!-- <h3><i class="fas fa-desktop fa-xs" style="color:#ccc"></i> RGB</h3> -->
 		<h3>RGB</h3>
 
 		<span data-toggle="modal" data-target="#color-modes-modal"><button onclick="$('#color-modes-tabs a[href=\'#rgb\']').tab('show');" class="btn info-btn" title="About RGB" data-toggle="popover">
@@ -194,6 +195,7 @@ if('serviceWorker' in navigator) {
 	<div class="col-lg-6 border border-dark rounded">
 		<div class="inner-div">
 
+		<!-- <h3><i class="fas fa-print fa-xs" style="color:#ccc"></i> CMYK</h3> -->
 		<h3>CMYK</h3>
 
 		<span data-toggle="modal" data-target="#color-modes-modal"><button onclick="$('#color-modes-tabs a[href=\'#cmyk\']').tab('show');" class="btn info-btn" title="About CMYK" data-toggle="popover">
@@ -238,6 +240,7 @@ if('serviceWorker' in navigator) {
 	<!-- HSL Column -->
 	<div class="col-lg-6 border border-dark rounded">
 		<div class="inner-div">
+		<!-- <h3><i class="fas fa-paint-brush fa-xs" style="color:#ccc"></i> HSL</h3> -->
 		<h3>HSL</h3>
 
 		<span data-toggle="modal" data-target="#color-modes-modal"><button onclick="$('#color-modes-tabs a[href=\'#hsl\']').tab('show');" class="btn info-btn" title="About HSL" data-toggle="popover">
@@ -277,6 +280,7 @@ if('serviceWorker' in navigator) {
 	<!-- HSV Column -->
 	<div class="col-lg-6 border border-dark rounded">
 		<div class="inner-div">
+		<!-- <h3><i class="fas fa-paint-brush fa-xs" style="color:#ccc"></i> HSV / HSB</h3> -->
 		<h3>HSV / HSB</h3>
 
 		<span data-toggle="modal" data-target="#color-modes-modal"><button onclick="$('#color-modes-tabs a[href=\'#hsl\']').tab('show');" class="btn info-btn" title="About HSV" data-toggle="popover">

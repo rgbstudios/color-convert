@@ -27,3 +27,26 @@ display color formulas?
 choose stored color mode (not always in hex) so conversion isn't messed up and numbers can always be increased/decreased
 use strict and modules, document code and clean it
 setting for clear all favorites on upload
+
+
+
+
+store color mode (ie. store hsl and dont convert it) (setting in settings)
+	each of the 4 color boxes has a btn in top right to make it default
+	clicking fills it in in that one and unfills other icons
+use cookies to remember settings, current color, history and favs (in settings)
+	enable cookie setting
+	when loading page, notification that cookies have been loaded, with action btn to link to settings to clear cookies and turn off cookie setting
+
+max size for history and favorites (configurable in settings)
+
+favorites modal with btn to add favorite (opens smaller modal, has checkbox below (default unchecked) to keep adding colors one after another)
+
+10 random colors modal that shows 10 random colors and code with copy btns and open btns, reload btn for 10 more, change 10 to another number at bottom dropdown (5, 10, 20, 40)
+
+fix unable to change some values bugs
+
+link btn change to unlink btn (toggle it)
+
+organize code
+
