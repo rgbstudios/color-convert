@@ -10,6 +10,11 @@ $(function() {
 
 	$('[data-toggle="popover"]').popover({trigger:'hover', placement:'bottom'});
 
+	$('#print-link').click(function() {
+		$('#rgb-logo').click(); // click something useless to hide the menu first
+		window.print();
+	});
+
 	$('#color-picker').colorPicker({opacity:false, dark: '#000', light: '#fff', 
 		margin: -1, animationSpeed: 250, renderCallback: 
 		function(elm, toggled) {
