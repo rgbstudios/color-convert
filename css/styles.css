@@ -95,8 +95,9 @@ li[role=presentation] button {
 
 /* specific buttons */
 .btn:hover i.fa-download, .btn:hover i.fa-upload {
-	-webkit-animation: flip 0.5s;
-	animation: flip 0.5s;
+	transform: scaleX(-1);
+	/*-webkit-animation: flip 0.5s;*/
+	/*animation: flip 0.5s;*/
 }
 .btn:hover i.fa-eraser, .btn:hover i.fa-trash {
 	-webkit-animation: wobble 1s;
@@ -112,9 +113,9 @@ li[role=presentation] button {
 	animation: shakey 0.5s;
 }
 @keyframes shakey {
-	0% {transform: translateX(2px);}
-	50% {transform: translateX(-4px);}
-	100% {transform: translateX(0px);}
+	0% {transform: translate(2px, -4px) rotate(60deg);}
+	50% {transform: translate(-4px, 0px) rotate(120deg);}
+	100% {transform: translate(0px, 0px);}
 }
 
 .btn:hover i.fa-history {
@@ -128,16 +129,23 @@ li[role=presentation] button {
 }
 
 #view-favorites-btn:hover i {
-	transform: translateY(4px);
+	animation: updown 0.5s;
+}
+@keyframes updown {
+	0% {transform: translateY(4px);}
+	50% {transform: translateY(-4px);}
+	100% {transform: translateY(0px);}
 }
 
-.btn i, #picker, #drop, #color-picker {
+.btn i, #picker, #color-picker {
 	transition: 0.25s ease-in-out;
+}
+#drop {
+	transition: fill 0.25s ease-in-out;
 }
 
 .btn:hover i.fa-copy {
 	transform: scaleX(-1);
-	/*transform: scale(1.2);*/
 }
 .btn:hover i.fa-sync-alt {
 	transform: rotate(180deg);
