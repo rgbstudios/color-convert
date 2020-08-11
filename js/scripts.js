@@ -58,7 +58,11 @@ $(function() {
 	$('#color-detect-input').select();
 
 	$('#color-detect-input').change(function() {
+		let tmp = $('#color-detect-input').val();
 		setColor($(this).val() );
+		// console.log(tmp);
+		// $('#color-detect-input').val(tmp);
+		setTimeout( ()=>$('#color-detect-input').val(tmp), 0);
 	});
 
 	$('.red').change(function() {
@@ -342,6 +346,8 @@ function setColor(str, updateColorPicker=true) { //using w3 library
 
 	let c = w3color(str);
 	if(!c.valid) return false;
+
+	$('#color-detect-input').val('');
 
 	setRGB(c.toRgb() );
 

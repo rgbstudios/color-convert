@@ -132,7 +132,7 @@ function processFile(evt, mode) {
 	if(file && file.length) {
 		removeAllColors();
 		let results = file.split('\r\n');
-		for(let i=0; i<results.length; i++) {
+		for(let i=results.length-1; i>=0; i--) {
 			let name = results[i].split(':')[0];
 			let hex = results[i].split(':')[1];
 			if(hex) // check if color exists

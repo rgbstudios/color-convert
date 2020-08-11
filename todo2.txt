@@ -50,3 +50,11 @@ link btn change to unlink btn (toggle it)
 
 organize code
 
+make print css
+
+upload option to delete old
+
+fix conversion problems with slightly adjusting input color and refusing to change range inputs sometimes
+
+USE COOKIES
+
