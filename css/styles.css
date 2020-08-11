@@ -180,13 +180,13 @@ input[type=text]:hover, input[type=number]:hover {
 	border: 2px solid #ccc;
 
 	/* account for border increase */
-	margin: -1px;
-	margin-top: 0px;
+	/*margin: -1px;*/
+	/*margin-top: 0px;*/
 }
-#color-detect-input:hover {
+/*#color-detect-input:hover {*/
 	/* account for border increase */
-	margin: 0px !important;
-}
+	/*margin: 0px;*/
+/*}*/
 
 /* checkbox */
 .custom-control-input:checked~.custom-control-label::before {
