@@ -4,7 +4,7 @@ function randInt(min, max) {
 
 let toastIdx = 0;
 function makeToast(title, body) {
-	$('.container').append(
+	$('#toast-wrapper').append(
 		'<div id="toast-' + (++toastIdx) + '" class="toast m-auto" data-autohide="false">'
 	+	'<div class="toast-header">'
 	+		'<h5 class="mr-auto">' + title + '</h5>'

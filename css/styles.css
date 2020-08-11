@@ -70,9 +70,27 @@ input[type=range] {
 .toast {
 	z-index: 1051 !important; /* bs modal is 1050 */
 	box-shadow: none;
+	min-width: 150px;
 }
 .toast-header {
 	border-color: #ccc;
+	background-color: #f2f2f2;
+}
+.toast-body {
+	background-color: #fff;
+}
+
+/*https://stackoverflow.com/a/54767810/4907950*/
+#toast-container{
+	position: sticky;
+	z-index: 1051 !important; /* bs modal is 1050 */
+	top: 0;
+}
+#toast-wrapper{
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 5px 0px;
 }
 
 /* button */
@@ -204,6 +222,7 @@ input[type=text]:hover, input[type=number]:hover {
 	/* fix display on mobile */
 	width: 100%;
 	height: 100%;
+	/*opacity: 0 !important; */
 }
 
 .dropdown-item:hover {
