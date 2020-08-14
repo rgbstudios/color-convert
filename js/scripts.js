@@ -210,7 +210,7 @@ function clamp(num, min, max) {
 	return num <= min ? min : num >= max ? max : num;
 }
 
-let types = {
+const TYPES = {
 	'rgb': [255,255,255],
 	'cmyk': [100,100,100,100],
 	'hsl': [360,100,100],
@@ -218,8 +218,8 @@ let types = {
 };
 
 function getValsFromText(str, type) {
-	let numVals = types[type].length;
-	let maxes = types[type];
+	let numVals = TYPES[type].length;
+	let maxes = TYPES[type];
 
 	str = str.split(',');
 	if(str.length<numVals)
