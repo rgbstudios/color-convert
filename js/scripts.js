@@ -209,6 +209,9 @@ function clamp(num, min, max) {
 		return 0;
 	return num <= min ? min : num >= max ? max : num;
 }
+function lerp(start, end, percent) {
+	return start + (end-start)*percent;
+}
 
 const TYPES = {
 	'rgb': [255,255,255],
