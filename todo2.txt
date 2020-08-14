@@ -61,3 +61,5 @@ USE COOKIES
 specific bug: removing the most recently added color item then attempting to add it doesn't work
 problem: because it saves the most recently added color item and checks against it
 solution: when removing the top item, clear the most recently added color stored
+
+USE VUE
