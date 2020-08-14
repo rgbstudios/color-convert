@@ -23,6 +23,7 @@ function removeAllCookies() {
 	makeToast('<i class="fas fa-check"></i> Removed Cookies', 'All (3) cookies were removed successfully');
 
 	updateCookieSettingsDisplay(0);
+	$('#use-cookies-checkbox').attr('checked',false);
 
 	console.log('removed cookies');
 }
