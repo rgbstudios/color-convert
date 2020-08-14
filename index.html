@@ -45,6 +45,8 @@
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"/>
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"/>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+<!-- JS Cookie -->
+<script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 <!-- jQuery Color Picker and W3 Color Library -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/tinyColorPicker/1.1.1/jqColorPicker.min.js"></script>
 <script src="js/w3color.js"></script>
@@ -59,6 +61,7 @@
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/color-item.css">
 <script src="js/scripts.js"></script>
+<script src="js/cookie-controller.js"></script>
 <script src="js/util.js"></script>
 <script src="js/settings.js"></script>
 <script src="js/slick-scripts.js"></script>
@@ -148,7 +151,7 @@ if('serviceWorker' in navigator) {
 		<!-- <h3><i class="fas fa-desktop fa-xs" style="color:#ccc"></i> RGB</h3> -->
 		<h3>RGB</h3>
 
-		<span data-toggle="modal" data-target="#color-modes-modal"><button onclick="$('#color-modes-tabs a[href=\'#rgb\']').tab('show');" class="btn info-btn" title="About RGB" data-toggle="popover">
+		<span data-toggle="modal" data-target="#color-modes-modal"><button onclick="$('#color-modes-tabs a[href=\'#rgb\']').tab('show');" class="btn btn-sm info-btn" title="About RGB" data-toggle="popover">
 			<i class="fas fa-info"></i>
 		</button></span>
 
@@ -203,7 +206,7 @@ if('serviceWorker' in navigator) {
 		<!-- <h3><i class="fas fa-print fa-xs" style="color:#ccc"></i> CMYK</h3> -->
 		<h3>CMYK</h3>
 
-		<span data-toggle="modal" data-target="#color-modes-modal"><button onclick="$('#color-modes-tabs a[href=\'#cmyk\']').tab('show');" class="btn info-btn" title="About CMYK" data-toggle="popover">
+		<span data-toggle="modal" data-target="#color-modes-modal"><button onclick="$('#color-modes-tabs a[href=\'#cmyk\']').tab('show');" class="btn btn-sm info-btn" title="About CMYK" data-toggle="popover">
 			<i class="fas fa-info"></i>
 		</button></span>
 
@@ -248,7 +251,7 @@ if('serviceWorker' in navigator) {
 		<!-- <h3><i class="fas fa-paint-brush fa-xs" style="color:#ccc"></i> HSL</h3> -->
 		<h3>HSL</h3>
 
-		<span data-toggle="modal" data-target="#color-modes-modal"><button onclick="$('#color-modes-tabs a[href=\'#hsl\']').tab('show');" class="btn info-btn" title="About HSL" data-toggle="popover">
+		<span data-toggle="modal" data-target="#color-modes-modal"><button onclick="$('#color-modes-tabs a[href=\'#hsl\']').tab('show');" class="btn btn-sm info-btn" title="About HSL" data-toggle="popover">
 			<i class="fas fa-info"></i>
 		</button></span>
 
@@ -288,7 +291,7 @@ if('serviceWorker' in navigator) {
 		<!-- <h3><i class="fas fa-paint-brush fa-xs" style="color:#ccc"></i> HSV / HSB</h3> -->
 		<h3>HSV / HSB</h3>
 
-		<span data-toggle="modal" data-target="#color-modes-modal"><button onclick="$('#color-modes-tabs a[href=\'#hsl\']').tab('show');" class="btn info-btn" title="About HSV" data-toggle="popover">
+		<span data-toggle="modal" data-target="#color-modes-modal"><button onclick="$('#color-modes-tabs a[href=\'#hsl\']').tab('show');" class="btn btn-sm info-btn" title="About HSV" data-toggle="popover">
 			<i class="fas fa-info"></i>
 		</button></span>
 
@@ -439,6 +442,15 @@ if('serviceWorker' in navigator) {
 				</button>
 			</div>
 			<div class="modal-body">
+				<p>General:</p>
+				<div class="custom-control custom-checkbox">
+					<input type="checkbox" class="custom-control-input" id="use-cookies-checkbox">
+					<label class="custom-control-label" for="use-cookies-checkbox">Use cookies to save history, favorites, settings, and more</label>
+				</div>
+				<button id="remove-cookies-btn" class="btn no-color" disabled>Remove all cookies</button>
+				<p><small><span id="cookie-info-number">0</span> cookies are being stored</small></p>
+
+
 				<p>Hex Input:</p>
 
 				<!-- TODO: unimplemented -->

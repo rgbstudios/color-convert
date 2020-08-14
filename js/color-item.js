@@ -34,10 +34,10 @@ function addColorItem(mode, hex, name='') {
 	$('#' + mode + '-modal .modal-body').prepend(
 		'<div class="' + mode + '-item color-item">'
 	+		'<button class="btn open-btn no-color" title="Open Color" data-toggle="popover" onclick="openColor(this, \'' + mode + '\');"><i class="fas fa-external-link-alt"></i></button>'
-	+		'<input class="form-control color-name" type="text" placeholder="Name your color (optional)" value="' + name + '">'
+	+		'<input class="form-control color-name" type="text" onchange="storeCookies([\'' + mode + '\'])" placeholder="Name your color (optional)" value="' + name + '">'
 	+		'<br class="mobile-only">'
 	+		'<div class="color-preview" style="background-color:' + hex + ';"></div>'
-	+		'<span>' + hex + '</span>'
+	+		'<span class="color-hex">' + hex + '</span>'
 	+		'<button class="btn copy-btn no-color" title="Copy" data-toggle="popover" onclick="copyColor(this);"><i class="fas fa-copy"></i></button>'
 	+		'<button class="btn link-btn no-color" title="Get Link" data-toggle="popover" onclick="copyColorLink(this);"><i class="fas fa-link"></i></button>'
 	+		'<button class="btn delete-btn no-color" title="Remove" data-toggle="popover" onclick="removeColor(this);"><i class="fas fa-trash"></i></button>'
@@ -46,6 +46,9 @@ function addColorItem(mode, hex, name='') {
 	);
 
 	$('[data-toggle="popover"]').popover({trigger:'hover', placement:'bottom'}); // add popovers to newly added btns
+
+	storeCookies([mode]);
+
 }
 
 // utility functions below
@@ -138,5 +141,23 @@ function processFile(evt, mode) {
 			if(hex) // check if color exists
 				addColorItem(mode, hex, name);
 		}
+	}
+}
+
+function getColorList(mode) {
+	let names = [], vals = [];
+	$('#' + mode + '-modal .modal-body .color-item').each( (idx, elm) => {
+		names.push( $(elm).find('.color-name').val() );
+		vals.push( $(elm).find('.color-hex').html() );
+	});
+	return [names, vals];
+}
+
+function loadColorList(mode, names, vals) {
+	if(names === undefined) return;
+	// list is 2d arr, contains 2 arrs with names and vals as specified above
+	for(let i=vals.length; i>=0; i--) {
+		if(vals[i] === undefined) continue;
+		addColorItem(mode, vals[i], names[i]); // mode, hex, name
 	}
 }

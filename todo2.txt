@@ -52,9 +52,12 @@ organize code
 
 make print css
 
-upload option to delete old
+during upload history/favorites: checkbox to delete old (or duplicates, etc), maybe in settings
 
 fix conversion problems with slightly adjusting input color and refusing to change range inputs sometimes
 
 USE COOKIES
 
+specific bug: removing the most recently added color item then attempting to add it doesn't work
+problem: because it saves the most recently added color item and checks against it
+solution: when removing the top item, clear the most recently added color stored
