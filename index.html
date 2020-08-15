@@ -45,6 +45,9 @@
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"/>
 <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"/>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+<!-- Vue -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<!-- <script src="https://unpkg.com/vuex"></script> -->
 <!-- JS Cookie -->
 <script src="https://cdn.jsdelivr.net/npm/js-cookie@rc/dist/js.cookie.min.js"></script>
 <!-- jQuery Color Picker and W3 Color Library -->
@@ -82,7 +85,7 @@ if('serviceWorker' in navigator) {
 </head>
 
 <body>
-<div class="text-center container">
+<div id="app" class="text-center container">
 
 <div id="toast-container">
 	<div id="toast-wrapper"></div>
@@ -329,7 +332,7 @@ if('serviceWorker' in navigator) {
 <br>
 <!-- TODO -->
 <span data-toggle="modal" data-target="#history-modal"><button id="history-btn" class="btn" title="History" data-toggle="popover"><i class="fas fa-history"></i></button></span>
-<button id="favorite-btn" class="btn" title="Favorite" data-toggle="popover"><i class="far fa-heart"></i></button>
+<button id="favorite-btn" @click="addFavorite()" class="btn" title="Favorite" data-toggle="popover"><i class="far fa-heart"></i></button>
 <span data-toggle="modal" data-target="#favorite-modal"><button id="view-favorites-btn" class="btn" title="View Favorites" data-toggle="popover"><i class="far fa-heart"></i> <i class="fas fa-list"></i></button></span>
 
 <br><br>
@@ -357,7 +360,7 @@ if('serviceWorker' in navigator) {
 				<button id="clear-history-btn" class="btn no-color" onclick="removeAllColors('history');">
 					<i class="fas fa-eraser"></i> Clear All
 				</button>
-				<input id="history-file-input" type="file" class="hidden">
+				<input id="history-file-input" @change="getFile('history')" type="file" class="hidden">
 			</div>
 		</div>
 	</div>
@@ -381,7 +384,7 @@ if('serviceWorker' in navigator) {
 				<button id="download-favorite-btn" class="btn no-color" onclick="downloadColors('favorite');"><i class="fas fa-download"></i> Download</button>
 				<button id="upload-favorite-btn" class="btn no-color" onclick="uploadColors('favorite');"><i class="fas fa-upload"></i> Upload</button>
 				<button id="clear-favorite-btn" class="btn no-color" onclick="removeAllColors('favorite');"><i class="fas fa-eraser"></i> Clear All</button>
-				<input id="favorite-file-input" type="file" class="hidden">
+				<input id="favorite-file-input" @change="getFile('favorite')" type="file" class="hidden">
 			</div>
 		</div>
 	</div>
