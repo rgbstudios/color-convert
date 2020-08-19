@@ -8,7 +8,7 @@ function makeToast(title, body) {
 		'<div id="toast-' + (++toastIdx) + '" class="toast m-auto" data-autohide="false">'
 	+	'<div class="toast-header">'
 	+		'<h5 class="mr-auto">' + title + '</h5>'
-	+		'<button type="button" class="close py-1 px-2" data-dismiss="toast">'
+	+		'<button type="button" class="close btn px-1" data-dismiss="toast" tabindex="-1">'
 	+			'<i class="fas fa-times fa-xs"></i>'
 	+		'</button>'
 	+	'</div>'

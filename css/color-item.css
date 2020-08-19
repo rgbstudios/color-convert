@@ -1,27 +1,21 @@
 .color-item {
-	padding: 20px;
-	margin: 5px;
+	padding: 1rem;
+	margin: 0.25rem;
 	width: 100%;
-	border: 1px solid #ccc;
-	border-radius: 5px;
-	background-color: #fff;
+	border: 1px solid hsl(0, 0%, 80%);
+	border-radius: 0.25rem;
+	background-color: hsl(0, 0%, 100%);
 	/*cursor: move;*/
 }
 .color-preview {
-	width: 25px;
-	height: 25px;
+	width: 1.5rem;
+	height: 1.5rem;
 	display: inline-block;
-	margin-top: 5px;
+	margin-top: 1rem;
 }
-
 .color-preview, .color-item .btn, .color-item span, .color-item input {
-	margin-right: 15px;
+	margin-right: 1rem;
 }
-.color-item input:hover {
-	/* account for border increase */
-	margin-right: 16px;
-}
-
 .color-item .color-name {
 	width: 40%;
 	display: inline;
@@ -29,9 +23,6 @@
 
 @media (max-width: 992px) { /* md */
 	.color-item .color-name {
-		width: 80%;
-	}
-	.color-preview {
-		margin-top: 5px;
+		width: 70%;
 	}
 }

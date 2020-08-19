@@ -54,15 +54,18 @@ $(function() {
 		}
 	});
 
-	$('#color-picker').click(); // commenting might fix some bugs with converting back and fourth on load url param
+	// note that typing elsewhere will be ignored while color picker is open
+	// b/c once it's closed the callback will be called and color will be reset
+	// $('#color-picker').click(); // commenting might fix some bugs with converting back and fourth on load url param
 	$('#color-detect-input').select();
 
 	$('#color-detect-input').change(function() {
 		let tmp = $('#color-detect-input').val();
+		if(tmp=='') return;
 		setColor($(this).val() );
 		// console.log(tmp);
 		// $('#color-detect-input').val(tmp);
-		setTimeout( ()=>$('#color-detect-input').val(tmp), 0);
+		setTimeout( ()=>$('#color-detect-input').val(tmp), 10);
 	});
 
 	$('.red').change(function() {
@@ -202,6 +205,9 @@ $(function() {
 	let q = url.searchParams.get('q');
 	if(q)
 		setColor('#'+q);
+	else
+		setColor('#000');
+	// $('#color-picker').colorPicker().colorPicker.render();
 });
 
 function clamp(num, min, max) {
@@ -377,12 +383,12 @@ function setColor(str) { //using w3 library
 
 	let hex = $('#hex-input').val();
 
-	$('.btn:not(.no-color)').css('color', hex);
+	$('.btn:not(.no-color):not(.close)').css('color', hex);
 	if(!c.isDark() ) {
-		$('.btn:not(.no-color)').addClass('dark');
+		$('.btn:not(.no-color):not(.close)').addClass('dark');
 	}
 	else {
-		$('.btn:not(.no-color)').removeClass('dark');
+		$('.btn:not(.no-color):not(.close)').removeClass('dark');
 	}
 
 	$('#color-picker').val(hex);

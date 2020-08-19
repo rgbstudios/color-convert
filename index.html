@@ -116,9 +116,9 @@ if('serviceWorker' in navigator) {
 		</div>
 		<div class="col-lg-4 col-md-6">
 			<br>
-			<button id="link-btn" class="btn"><i class="fas fa-link"></i> <small>Link</small></button>
-			<button id="reset-btn" class="btn"><i class="fas fa-sync-alt"></i> <small>Reset</small></button>
-			<button id="random-btn" class="btn"><i class="fas fa-dice-five"></i> <small>Random</small></button>
+			<button id="link-btn" class="btn mr-1"><i class="fas fa-link"></i> <small>Link</small></button>
+			<button id="reset-btn" class="btn mr-1"><i class="fas fa-sync-alt"></i> <small>Reset</small></button>
+			<button id="random-btn" class="btn mr-1"><i class="fas fa-dice-five"></i> <small>Random</small></button>
 
 			<!-- TODO -->
 			<button class="btn my-2" data-toggle="dropdown">
@@ -145,7 +145,7 @@ if('serviceWorker' in navigator) {
 
 <div id="color-sections" class="row">
 	<!-- RGB Column -->
-	<div class="col-lg-6 border border-dark rounded">
+	<div class="col-lg-6">
 		<div class="inner-div">
 
 		<!-- <h3><i class="fas fa-desktop fa-xs" style="color:#ccc"></i> RGB</h3> -->
@@ -200,7 +200,7 @@ if('serviceWorker' in navigator) {
 	</div>
 
 	<!-- CMYK Column -->
-	<div class="col-lg-6 border border-dark rounded">
+	<div class="col-lg-6">
 		<div class="inner-div">
 
 		<!-- <h3><i class="fas fa-print fa-xs" style="color:#ccc"></i> CMYK</h3> -->
@@ -246,7 +246,7 @@ if('serviceWorker' in navigator) {
 	</div>
 
 	<!-- HSL Column -->
-	<div class="col-lg-6 border border-dark rounded">
+	<div class="col-lg-6">
 		<div class="inner-div">
 		<!-- <h3><i class="fas fa-paint-brush fa-xs" style="color:#ccc"></i> HSL</h3> -->
 		<h3>HSL</h3>
@@ -286,7 +286,7 @@ if('serviceWorker' in navigator) {
 	</div>
 
 	<!-- HSV Column -->
-	<div class="col-lg-6 border border-dark rounded">
+	<div class="col-lg-6">
 		<div class="inner-div">
 		<!-- <h3><i class="fas fa-paint-brush fa-xs" style="color:#ccc"></i> HSV / HSB</h3> -->
 		<h3>HSV / HSB</h3>
@@ -328,8 +328,8 @@ if('serviceWorker' in navigator) {
 
 <br>
 <!-- TODO -->
-<span data-toggle="modal" data-target="#history-modal"><button id="history-btn" class="btn" title="History" data-toggle="popover"><i class="fas fa-history"></i></button></span>
-<button id="favorite-btn" class="btn" title="Favorite" data-toggle="popover"><i class="far fa-heart"></i></button>
+<span data-toggle="modal" data-target="#history-modal"><button id="history-btn" class="btn mr-1" title="History" data-toggle="popover"><i class="fas fa-history"></i></button></span>
+<button id="favorite-btn" class="btn mr-1" title="Favorite" data-toggle="popover"><i class="far fa-heart"></i></button>
 <span data-toggle="modal" data-target="#favorite-modal"><button id="view-favorites-btn" class="btn" title="View Favorites" data-toggle="popover"><i class="far fa-heart"></i> <i class="fas fa-list"></i></button></span>
 
 <br><br>
@@ -342,7 +342,7 @@ if('serviceWorker' in navigator) {
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title"><i class="fas fa-history"></i> History</h5>
-				<button type="button" class="close" aria-label="Close" data-dismiss="modal">
+				<button type="button" class="close btn" aria-label="Close" data-dismiss="modal">
 					<span><i class="fas fa-times fa-xs"></i></span>
 				</button>
 			</div>
@@ -370,7 +370,7 @@ if('serviceWorker' in navigator) {
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title"><i class="fas fa-heart"></i> Favorites</h5>
-				<button type="button" class="close" aria-label="Close" data-dismiss="modal">
+				<button type="button" class="close btn" aria-label="Close" data-dismiss="modal">
 					<span><i class="fas fa-times fa-xs"></i></span>
 				</button>
 			</div>
@@ -392,7 +392,7 @@ if('serviceWorker' in navigator) {
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title"><i class="fas fa-question"></i> Help</h5>
-				<button type="button" class="close" aria-label="Close" data-dismiss="modal">
+				<button type="button" class="close btn" aria-label="Close" data-dismiss="modal">
 					<span><i class="fas fa-times fa-xs"></i></span>
 				</button>
 			</div>
@@ -437,7 +437,7 @@ if('serviceWorker' in navigator) {
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title"><i class="fas fa-cog"></i> Settings</h5>
-				<button type="button" class="close" aria-label="Close" data-dismiss="modal">
+				<button type="button" class="close btn" aria-label="Close" data-dismiss="modal">
 					<span><i class="fas fa-times fa-xs"></i></span>
 				</button>
 			</div>
@@ -478,7 +478,7 @@ if('serviceWorker' in navigator) {
 		<div class="modal-content">
 			<div class="modal-header">
 				<h5 class="modal-title"><i class="fas fa-info"></i> Color Modes</h5>
-				<button type="button" class="close" aria-label="Close" data-dismiss="modal">
+				<button type="button" class="close btn" aria-label="Close" data-dismiss="modal">
 					<span><i class="fas fa-times fa-xs"></i></span>
 				</button>
 			</div>
