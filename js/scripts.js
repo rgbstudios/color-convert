@@ -19,7 +19,7 @@ $(function() {
 		margin: -1, animationSpeed: 250, renderCallback: 
 		function(elm, toggled) {
 			$('#hsl-input').val(elm.val() );
-			setColor($('#hsl-input').val(), false);
+			setColor($('#hsl-input').val() );
 			console.log('callback called');
 		}
 	});
@@ -330,7 +330,7 @@ function setHSV(hsv) {
 	$('#hsv-value-input-range').val(v);
 }
 
-function setColor(str, updateColorPicker=true) { //using w3 library
+function setColor(str) { //using w3 library
 	if(str.indexOf('hsv') != -1 || str.indexOf('hsb') != -1) { // special case for hsv/hsb
 		let strArr = str.replace(' ',',').split(','); // split into array based off commas and/or spaces
 		for(let i=0; i<strArr.length; i++)
@@ -387,9 +387,6 @@ function setColor(str, updateColorPicker=true) { //using w3 library
 
 	$('#color-picker').val(hex);
 	$('#color-picker').css('background-color', hex);
-	if(updateColorPicker) {
-		$('#color-picker').colorPicker().colorPicker.render();
-	}
 
 	//set url if already set
 	let url = new URL(window.location.href);
