@@ -32,7 +32,7 @@
 <link rel="stylesheet" type="text/css" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
 
 <!-- Vue -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
 
 <!-- jQuery, FontAwesome, Popper, Bootstrap CDNs -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
@@ -63,13 +63,16 @@
 
 <link rel="stylesheet" href="css/styles.css">
 <link rel="stylesheet" href="css/color-item.css">
-<script src="js/onload.js"></script>
+
+<script src="js/app.js"></script>
+
+<!-- <script src="js/onload.js"></script>
 <script src="js/scripts.js"></script>
 <script src="js/cookie-controller.js"></script>
 <script src="js/util.js"></script>
 <script src="js/settings.js"></script>
 <script src="js/slick-scripts.js"></script>
-<script src="js/color-item.js"></script>
+<script src="js/color-item.js"></script> -->
 
 <script>
 //https://codelabs.developers.google.com/codelabs/add-to-home-screen/#5
@@ -86,8 +89,7 @@ if('serviceWorker' in navigator) {
 </head>
 
 <body>
-<div class="text-center container">
-
+<div id="app" class="text-center container">
 <div id="toast-container">
 	<div id="toast-wrapper"></div>
 </div>
@@ -162,7 +164,7 @@ if('serviceWorker' in navigator) {
 		<div class="row">
 			<div class="col-md-6">
 				<div class="input-group">
-					<input id="rgb-input" type="text" class="form-control input-lg " value="rgb(0, 0, 0)" placeholder="Type your RGB color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+					<input v-bind:value="rgb" @change="setRGB" id="rgb-input" type="text" class="form-control input-lg " value="rgb(0, 0, 0)" placeholder="Type your RGB color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
 					<div class="input-group-append">
 						<button class="btn btn-default btn-copy" title="Copy" data-toggle="popover"><i class="fas fa-copy"></i> </button>
 					</div>
@@ -171,7 +173,7 @@ if('serviceWorker' in navigator) {
 			</div>
 			<div class="col-md-6">
 				<div class="input-group">
-					<input id="hex-input" type="text" class="form-control input-lg " value="#000000" placeholder="Type your Hex color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
+					<input v-bind:value="hex" @change="setHex" id="hex-input" type="text" class="form-control input-lg " value="#000000" placeholder="Type your Hex color..." autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false">
 					<div class="input-group-append">
 						<button class="btn btn-default btn-copy" title="Copy" data-toggle="popover"><i class="fas fa-copy"></i> </button>
 					</div>
@@ -185,18 +187,18 @@ if('serviceWorker' in navigator) {
 		<div class="row">
 			<div class="col-4">
 				<h5>Red:</h5>
-				<input id="rgb-red-input-range" class="form-control custom-range red" type="range" value="0" min="0" max="255">
-				<input id="rgb-red-input" class="form-control  red" type="number" value="0" min="0" max="255">
+				<input v-model:value="r" @change="validateR" id="rgb-red-input-range" class="form-control custom-range red" type="range" value="0" min="0" max="255">
+				<input v-model:value="r" @input="validateR" id="rgb-red-input" class="form-control  red" type="number" value="0" min="0" max="255">
 			</div>
 			<div class="col-4">
 				<h5>Green:</h5>
-				<input id="rgb-green-input-range" class="form-control custom-range green" type="range" value="0" min="0" max="255">
-				<input id="rgb-green-input" class="form-control  green" type="number" value="0" min="0" max="255">
+				<input v-model:value="g" @change="validateG" id="rgb-green-input-range" class="form-control custom-range green" type="range" value="0" min="0" max="255">
+				<input v-model:value="g" @input="validateG" id="rgb-green-input" class="form-control  green" type="number" value="0" min="0" max="255">
 			</div>
 			<div class="col-4">
 				<h5>Blue:</h5>
-				<input id="rgb-blue-input-range" class="form-control custom-range blue" type="range" value="0" min="0" max="255">
-				<input id="rgb-blue-input" class="form-control  blue" type="number" value="0" min="0" max="255">
+				<input v-model:value="b" @change="validateB" id="rgb-blue-input-range" class="form-control custom-range blue" type="range" value="0" min="0" max="255">
+				<input v-model:value="b" @input="validateB" id="rgb-blue-input" class="form-control  blue" type="number" value="0" min="0" max="255">
 			</div>
 		</div>
 		</div>
