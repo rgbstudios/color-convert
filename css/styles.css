@@ -259,13 +259,16 @@ li[role=presentation] button {
 }
 
 @media (max-width: 992px) { /* md */
-	.slick-arrow {
-		display: none !important;
-	}
 	.mobile-only {
 		display: initial;
 	}
 	.modal-dialog {
 		max-width: 90%;
 	}
+}
+
+@media (max-width: 768px) { /* sm */
+	.slick-arrow {
+		display: none !important;
+	}	
 }

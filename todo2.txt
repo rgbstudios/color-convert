@@ -64,8 +64,14 @@ solution: when removing the top item, clear the most recently added color stored
 
 USE VUE
 
+
 later:
 option to choose default color mode (shows up in favorites/history as well for display and copy)
 
 
 move from bootstrap to tailwind
+
+old notes:
+// "cmyk-" in the textbox breaks it?
+//make note when they enter cmyk to get another color it's because it's converting it with/without key, they're both the same color
+
