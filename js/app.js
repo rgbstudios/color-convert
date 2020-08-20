@@ -10,9 +10,7 @@ $( ()=> {
 		methods: {
 			validateR: function() {
 				let val = parseInt(Math.round($('#rgb-red-input').val() ) );
-				console.log(typeof val);
 				this.r = clamp(val,0,255);
-				console.log(typeof this.r);
 			},
 			validateG: function() {
 				let val = parseInt(Math.round($('#rgb-green-input').val() ) );
@@ -41,7 +39,6 @@ $( ()=> {
 		},
 		computed: {
 			hex: function() {
-				console.log(typeof this.r);
 				return RGBtoHex(this.r, this.g, this.b);
 			},
 			rgb: function() {
@@ -92,9 +89,6 @@ function getValsFromText(str, type) {
 // conversion
 
 function RGBtoHex(r, g, b, usePound=true, useCaps=true) {
-	console.log(typeof r);
-	console.log(r);
-	console.log(r.toString(16) );
 
 	r = r.toString(16);
 	g = g.toString(16);
