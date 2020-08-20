@@ -59,10 +59,10 @@ function clamp(num, min, max) {
 }
 
 const TYPES = {
-	'rgb': [255,255,255],
-	'cmyk': [100,100,100,100],
-	'hsl': [360,100,100],
-	'hsv': [360,100,100]
+	rgb: [255,255,255],
+	cmyk: [100,100,100,100],
+	hsl: [360,100,100],
+	hsv: [360,100,100]
 };
 
 function getValsFromText(str, type) {
